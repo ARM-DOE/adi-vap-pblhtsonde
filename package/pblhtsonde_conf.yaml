@@ -1,0 +1,52 @@
+#------------------------------------------------------------------------------
+# APR Configuration File
+#
+# Detailed APR documentation can be found here:
+# https://code.arm.gov/distrib/release/blob/master/README.md
+#------------------------------------------------------------------------------
+
+comp:           vap
+package-name:   pblhtsonde_conf
+default-prefix: /apps/process
+architecture:   noarch
+
+build-script:   package/apr_build.sh --conf
+package-script-dir: package
+
+include-items:
+   - (package/apps/process)/conf
+
+author:
+  name:         None
+  organization: ''
+  email:        None
+  phone:        'None'
+
+service-now:
+#  - ENG
+#  - EWO
+
+special-instructions: >
+    None
+
+synopsis: >
+    Configuration files for the pblhtsonde VAP.
+
+description: >
+    This package loads the process and DOD definitions required by the
+    pblhtsonde VAP into the database.
+
+notification-list: 
+  - N/A
+
+notes: >
+    None.
+
+#------------------------------------------------------------------------------
+# Required fields that do not need to be set for this release
+
+build-target:   noos
+privileged:     ''
+exclude-items:  []
+package-dependency: []
+file-dependency: []

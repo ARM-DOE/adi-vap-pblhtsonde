@@ -1,0 +1,90 @@
+
+#------------------------------------------------------------------------------
+# APR Configuration File
+#
+# Detailed APR documentation can be found here:
+# https://code.arm.gov/distrib/release/blob/master/README.md
+#------------------------------------------------------------------------------
+
+comp:           vap
+package-name:   pblhtsonde
+default-prefix: /apps/process
+
+build-script:   package/apr_build.sh
+test-script:    test/test.sh
+
+include-items:
+   - (package/apps/process)/bin
+
+author:
+  name:         None
+  organization: ''
+  email:        None
+  phone:        'None'
+
+service-now:
+#  - ENG
+#  - EWO
+
+special-instructions: >
+    None
+
+synopsis: >
+    PBLHTSONDE VAP process.
+
+description: >
+    PBLHTSONDE VAP process.
+
+syntactical-example: >
+    pblhtsonde -s site -f facility -b YYYYMMDD -e YYYYMMDD
+
+instructions: >
+    Run 'pblhtsonde -h' for usage instructions.
+
+input-requirements: >
+    See the pblhtsonde VAP process definition in the PCM
+    for the list of input datastream(s).
+
+output-requirements: >
+    See the pblhtsonde VAP process definition in the PCM
+    for the list of output datastream(s).
+
+log-files:
+  - ${LOGS_DATA}/${site}/proc_logs/${site}pblhtsonde${facility}
+
+error-messages: >
+    Error and warning messages are written to the log file,
+    and also emailed to the address specified in the database.
+
+information-messages: >
+    Informational messages are written to the log file.
+
+debug-messages: >
+    Debug messages are written to the terminal when running in debug mode.
+
+sites-facilities: >
+    See the pblhtsonde VAP process definition in the PCM
+    for the list of sites and facilities.
+
+environment-variables:
+  - ${DATASTREAM_DATA}  top level datastream directory
+  - ${LOGS_DATA}        top level logs directory
+  - ${VAP_HOME}         prefix of VAP installation location
+
+notification-list:
+  - N/A
+
+notes: >
+    None.
+
+related-urls:
+  - N/A
+
+#------------------------------------------------------------------------------
+# Required fields that do not need to be set for this release
+
+build-target:   ''
+privileged:     ''
+exclude-items:  []
+package-dependency: []
+file-dependency: []

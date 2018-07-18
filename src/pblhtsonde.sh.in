@@ -1,0 +1,25 @@
+#!/bin/bash
+bin=`dirname "$(readlink -f "$0")"`
+export ADI_IDL_WRAPPER=$(basename $0)
+
+IDL_DIR="@IDL_DIR@"
+if [ "$@IDLnn@_DIR" ]; then
+    IDL_DIR=$@IDLnn@_DIR
+fi
+export IDL_DIR
+
+IDL_PATH="@IDL_PATH@"
+if [ "$@IDLnn@_PATH" ]; then
+    IDL_PATH=$@IDLnn@_PATH
+fi
+export IDL_PATH
+
+IDL_DLM_PATH="@IDL_DLM_PATH@"
+if [ "$@IDLnn@_DLM_PATH" ]; then
+    IDL_DLM_PATH=$@IDLnn@_DLM_PATH
+fi
+export IDL_DLM_PATH
+
+$IDL_DIR/bin/idl -rt=${bin}/../bytecode/@SAV_FILE@ -args $@
+
+exit $?
