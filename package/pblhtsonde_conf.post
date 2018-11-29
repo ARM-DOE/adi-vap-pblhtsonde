@@ -1,0 +1,10 @@
+#!/bin/csh
+#
+# Post install script for the pblhtsonde VAP process.
+#
+/bin/csh -c "/apps/ds/bin/db_import_process /apps/process/conf/vap/pblhtsonde/pblhtsonde.process"
+/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-0.0.dod"
+/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-0.1.dod"
+/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-1.0.dod"
+/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-2.0.dod"
+
