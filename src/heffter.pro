@@ -28,7 +28,7 @@ FUNCTION HEFFTER, lapse_rate_mask_h,  smoothed_lapse_ss_h, heightm_h, theta_ss_h
     ;layer_smoothed_lapse = heightm_h(top_of_layer_i[0:omaxlayer-1]) - heightm_h(bottom_of_layer_i[0:omaxlayer-1])
     ; This is when the first criteria is met and where the alternate pbl is calcualted
     max_smoothed_lapse = max(layer_smoothed_lapse,i)
-    ;print, bottom_of_layer_i[i]
+    ;if ds.debug gt 0 then print, bottom_of_layer_i[i]
     opblh_alt = heightm_h(bottom_of_layer_i[i])
     
     if numlayers gt 0 then begin
@@ -52,7 +52,7 @@ FUNCTION HEFFTER, lapse_rate_mask_h,  smoothed_lapse_ss_h, heightm_h, theta_ss_h
            if nxtt gt 0 then layer_info(ml_index,i)=layer_info(bottom_index,i)+x1(0)
          endfor
         
-         ;print, layer_info
+         ;if ds.debug gt 0 then print, layer_info
          ;assign the heights to the layers
          layer_info_heights=layer_info
          
@@ -62,9 +62,9 @@ FUNCTION HEFFTER, lapse_rate_mask_h,  smoothed_lapse_ss_h, heightm_h, theta_ss_h
          endfor
          
          layer_delta_theta = theta_ss_h(top_of_layer_i[0:omaxlayer-1])-theta_ss_h(bottom_of_layer_i[0:omaxlayer-1])
-         ;print, layer_info_heights 
+         ;if ds.debug gt 0 then print, layer_info_heights 
     endif else begin
-        print, 'There are no layers'
+        if ds.debug gt 0 then print, 'There are no layers'
         omaxlayer = 1 ; set everything to missing
         return, pblh
     endelse
