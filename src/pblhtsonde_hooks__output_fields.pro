@@ -20,35 +20,67 @@ function pblhtsonde_hooks::output_fields, stream, key
     outvarNameList = hash()
     outvarNameList['pblhtsonde1mcfarl_c1'] = [ $
         'base_time', $
-        'time_offset', $
-        'time', $
-        'atm_pres', $
-        'air_temp', $
-        'wspd', $
-        'rh', $
-        'pbl_height_heffter', $
-        'pbl_regime_type_liu_liang', $
-        'pbl_height_liuliang', $
-        'pbl_height_bulkrichardson_pt25', $
-        'pbl_height_bulkrichardson_pt5', $
-        'pressure_gridded', $
-        'lapserate_theta_ss', $
-        'lapserate_theta_smoothed', $
-        'atm_pres_ss', $
-        'theta_ss', $
-        'height_ss', $
-        'wspd_ss', $
-        'richardson_number', $
-        'virtual_theta_ss', $
-        'bottom_inversion', $
-        'top_inversion', $
-        'lapserate_max', $
         'delta_theta_max', $
-        'll_level_1', $
-        'll_level_2', $
-        'lat', $
+        'lapserate_max', $
+        'virtual_theta_ss', $
+        'richardson_number', $
+        'atm_pres_ss', $
+        'air_temp', $
+        'atm_pres', $
+        'level_2_liu_liang', $
+        'level_1_liu_liang', $
+        'potential_temp_max_diff', $
+        'lapse_rate_max', $
+        'virtual_potential_temp', $
+        'bulk_richardson_number', $
+        'wind_speed_liu_liang', $
+        'potential_temp_liu_liang', $
+        'atmos_pressure_liu_liang_top', $
+        'potential_temp_lapse_rate_heffter', $
+        'potential_temp_lapse_rate_liu_liang', $
+        'atmos_pressure_liu_liang', $
+        'pbl_height_bulk_richardson_pt5', $
+        'pbl_height_bulk_richardson_pt25', $
+        'pbl_height_liu_liang', $
+        'pbl_regime_type_liu_liang', $
+        'relative_humidity', $
+        'wind_speed', $
+        'dry_bulb_temp', $
+        'atmos_pressure', $
+        'layer', $
+        'height_heffter', $
+        'height_liu_liang', $
+        'height', $
+        'alt', $
         'lon', $
-        'alt']
+        'lat', $
+        'll_level_2', $
+        'll_level_1', $
+        'max_delta_theta', $
+        'max_lapse_rate', $
+        'top_inversion', $
+        'bottom_inversion', $
+        'thetav', $
+        'br_profile', $
+        'wspd_ss', $
+        'height_ss', $
+        'theta_ss', $
+        'pressure_ss', $
+        'lapserate_theta_smoothed', $
+        'lapserate_theta_ss', $
+        'pressure_gridded', $
+        'pbl_height_bulkrichardson_pt5', $
+        'pbl_height_bulkrichardson_pt25', $
+        'pbl_height_liuliang', $
+        'regime_type', $
+        'pbl_height_heffter', $
+        'rh', $
+        'wspd', $
+        'tdry', $
+        'pres', $
+        'time', $
+        'time_offset']
+
 
     if n_params() eq 0 || stream eq !null then return, outvarNameList
     if n_params() eq 1 || key eq !null then begin
@@ -64,6 +96,7 @@ function pblhtsonde_hooks::output_fields, stream, key
     return, (outvarNameList[stream])[key]
 
 end
+
 pro pblhtsonde_hooks__output_fields
   compile_opt idl2, logical_predicate
   s={ pblhtsonde_hooks $

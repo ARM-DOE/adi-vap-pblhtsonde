@@ -2,34 +2,22 @@
 ;;********************************************************************************
 ;*
 ;*  Author:
-;*     name:  
-;*     phone: 
-;*     email: 
+;*     name:  Colby Ham
+;*     phone: (509)554-4076
+;*     email: colby.ham@pnnl.gov
 ;*
 ;********************************************************************************
-;*
-;*  REPOSITORY INFORMATION:
-;*    $Revision: 1.2 $
-;*    $Author: sivaraman $
-;*    $Date: 2013-08-08 23:28:38 $
-;*    $State: Exp $
-;*
-;********************************************************************************
-;*
-;*  NOTE: DOXYGEN is used to generate documentation for this file.
-;*
-;*******************************************************************************
-;** @file pblhtsonde_vap.pro
+;** @file pblhtsonde.pro
 ;*  pblhtsonde VAP Main Functions.
 ;*
 ; *  Main entry function.
 ; *
 ;- 
-pro pblhtsonde_vap, type, _ref_extra=extra
+pro pblhtsonde, type, _ref_extra=extra
     compile_opt idl2, logical_predicate
 
     ds=dsproc()
-    ;ds.debug=n_elements(debug) ? debug : 2
+    ds.use_nc_extension
 
     ; This can be an array or a scalar
     proc_names = [ 'pblhtsonde' ]

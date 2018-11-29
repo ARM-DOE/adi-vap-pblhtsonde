@@ -1,6 +1,6 @@
 #------------------------------------------------------------------------------
 # APR Configuration File
-#
+# 
 # Detailed APR documentation can be found here:
 # https://code.arm.gov/distrib/release/blob/master/README.md
 #------------------------------------------------------------------------------
@@ -9,6 +9,7 @@ comp:           vap
 package-name:   pblhtsonde_conf
 default-prefix: /apps/process
 architecture:   noarch
+build-target:   noos
 
 build-script:   package/apr_build.sh --conf
 package-script-dir: package
@@ -17,10 +18,10 @@ include-items:
    - (package/apps/process)/conf
 
 author:
-  name:         None
+  name:         Colby Ham
   organization: ''
-  email:        None
-  phone:        'None'
+  email:        colby.ham@pnnl.gov
+  phone:        '(509)554-4076'
 
 service-now:
 #  - ENG
@@ -45,7 +46,6 @@ notes: >
 #------------------------------------------------------------------------------
 # Required fields that do not need to be set for this release
 
-build-target:   noos
 privileged:     ''
 exclude-items:  []
 package-dependency: []

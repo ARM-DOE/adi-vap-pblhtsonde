@@ -1,7 +1,7 @@
 #!/bin/bash
 
 proctype='vap'
-process='adi_example1'
+process='pblhtsonde'
 execname=$process
 
 idl_dir=/apps/base/idl/idl86
@@ -78,6 +78,11 @@ do
     esac
 done
 
+if [ $destdir ] && [ ! $prefix ]; then
+   usage
+   exit 1
+fi
+
 # Get prefix from environemnt variable if it wasn't specified
 
 if [ ! $prefix ]; then
@@ -131,39 +136,44 @@ if [ ! $exec_only ] && [ -d conf ]; then
 
     echo "------------------------------------------------------------------"
     confdir="$destdir$prefix/conf/$proctype"
+    if [ ! -d $confdir ]; then
+        run "mkdir -p $confdir"
+    fi
 
-    if [ -e "conf/$process.process" ]; then
+    files=();
+    cd conf
+    shopt -s nullglob
+    for f in *
+    do
+        if [ -d $f ] && [ -e $f/$f.process ]; then
+
+            echo "confdir: $confdir/$f"
+            run "rm -rf $confdir/$f"
+
+            if [ ! $uninstall ]; then
+                run "cp -R $f $confdir"
+            fi
+        else
+            files+=( $f )
+        fi
+    done
+
+    if [ $files ]; then
 
         confdir+="/$process"
         echo "confdir: $confdir"
-
         run "rm -rf $confdir"
+
         if [ ! $uninstall ]; then
-            if [ ! -d $confdir ]; then
-                run "mkdir -p $confdir"
-            fi
-            run "cp -R conf/* $confdir"
+            run "mkdir -p $confdir"
+            for f in ${files[@]}
+            do
+                run "cp -R $f $confdir"
+            done
         fi
-    else
-        cd conf
-        shopt -s nullglob
-        for d in */
-        do
-            if [ -e "$d/$d.process" ]; then
-
-                echo "confdir: $confdir/$d"
-                run "rm -rf $confdir/$d"
-
-                if [ ! $uninstall ]; then
-                    if [ ! -d $confdir/$d ]; then
-                        run "mkdir -p $confdir/$d"
-                    fi
-                    run "cp -R $d/* $confdir/$d"
-                fi
-            fi
-        done
-        cd ..
     fi
+
+    cd ..
 fi
 
 if [ $conf_only ]; then
@@ -300,3 +310,4 @@ done
 cd ..
 
 exit 0
+

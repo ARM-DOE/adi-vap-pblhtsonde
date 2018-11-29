@@ -1,7 +1,6 @@
-
 #------------------------------------------------------------------------------
 # APR Configuration File
-#
+# 
 # Detailed APR documentation can be found here:
 # https://code.arm.gov/distrib/release/blob/master/README.md
 #------------------------------------------------------------------------------
@@ -15,12 +14,13 @@ test-script:    test/test.sh
 
 include-items:
    - (package/apps/process)/bin
+   - (package/apps/process)/bytecode
 
 author:
-  name:         None
+  name:         Colby Ham
   organization: ''
-  email:        None
-  phone:        'None'
+  email:        colby.ham@pnnl.gov
+  phone:        '(509)554-4076'
 
 service-now:
 #  - ENG

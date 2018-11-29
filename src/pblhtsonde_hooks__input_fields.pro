@@ -38,9 +38,11 @@ function pblhtsonde_hooks::input_fields, key
       ; Assume key is a numeric index in this case
       return, invarNameList[key]
 end
+
 pro pblhtsonde_hooks__input_fields
   compile_opt idl2, logical_predicate
   s={ pblhtsonde_hooks $
     , Inherits IDL_Object $
     }
 end
+
