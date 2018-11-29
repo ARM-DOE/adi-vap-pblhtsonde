@@ -59,20 +59,20 @@ function pblhtsonde_hooks::init_process_hook, ds
     
     ; Get Id of input datastream
     dsid_in = ds.get_input_datastream_id(dsc_name='sondewnpn',dsc_level='b1')
-        print, 'dsid_in: ',dsid_in
+    if ds.debug gt 0 then print, 'dsid_in: ',dsid_in
     
     if dsid_in lt 0 then return, 0
     userdata.bbss_dsid_b1 = dsid_in
     
     dsid_in = ds.get_input_datastream_id(dsc_name='sondewnpn', dsc_leve='a1')
-    print, 'dsid_in: ', dsid_in
+    if ds.debug gt 0 then print, 'dsid_in: ', dsid_in
     
     if dsid_in lt 0 then return, 0
     userdata.bbss_dsid_a1 = dsid_in
     
     ;if dsid_in le 0 then begin
         ;dsid_in = ds.get_input_datastream_id(dsc_name='sondewnpn',dsc_level='a1')
-        ;print, 'dsid_in: ',dsid_in
+        ;if ds.debug gt 0 then print, 'dsid_in: ',dsid_in
         ;userdata.bbss_dsid_a1 = dsid_in
         ; Sonde data is stored as one file or launch per 'observation'
         ; We want to load all complete observations that begin within
@@ -203,11 +203,12 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
         bbss_times = bbss.get_sample_times(0,count=bbss_ntimes,double=1)
         if ~bbss_ntimes then return, -1
 
-
-        print,  'number of times= ', bbss_ntimes
-        print,  'time of first sample= ', long64(bbss_times[0])
-        print,  'time of last sample= ', long64(bbss_times[bbss_ntimes-1])
-        print, 'base_time  bbss =', bbss.base_time
+        if ds.debug gt 0 then begin
+            print,  'number of times= ', bbss_ntimes
+            print,  'time of first sample= ', long64(bbss_times[0])
+            print,  'time of last sample= ', long64(bbss_times[bbss_ntimes-1])
+            print, 'base_time  bbss =', bbss.base_time
+        endif
 
         ; Create the output dataset
         ; Set location is set to zero so that the user can enter lat/lon
@@ -237,7 +238,7 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
          
         conf_data_home = getenv("CONF_DATA")
         if(n_elements(conf_data_home) eq 0) then begin
-          print, '      *** CONF_DATA is not defined - quitting ABNORMALLY'
+          if ds.debug gt 0 then print, '      *** CONF_DATA is not defined - quitting ABNORMALLY'
           ds.abort, 'No conf_data environment variable set.'
         endif
         ;Need to talk to Krista to see if we should not hard code this vapname
@@ -265,7 +266,7 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
         
         nsamples = irh.sample_count
         nvars_out = n_elements(self->output_fields('pblhtsonde1mcfarl_c1'))
-        print, nvars_out, 'Number of vars in output', obs_index, nsamples
+        if ds.debug gt 0 then print, nvars_out, 'Number of vars in output', obs_index, nsamples
        
     
         pres_grid_index    = self->output_fields('pblhtsonde1mcfarl_c1', 'pressure_gridded')
@@ -341,7 +342,7 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
         to_var = irh.time_var.data
     
         MAX_PBL_HT = MAX_PBL_HT + ialt_var[0]
-        print, 'The maximum pbl height is set to ', max_pbl_ht
+        if ds.debug gt 0 then print, 'The maximum pbl height is set to ', max_pbl_ht
         ;This is site specific
         status = oheffter.set_att('valid_max',max_pbl_ht)
         if status eq 0 then return, -1
@@ -422,7 +423,7 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
         x1 = where(opres_var[1] lt 0, ncount)
         if (ncount gt 0) then begin
             oqc = oqc or qc[6].value
-            print,'The pressure value is not valid to do the subsampling. Found a bad sonde. ', opres_var[1]
+            if ds.debug gt 0 then print,'The pressure value is not valid to do the subsampling. Found a bad sonde. ', opres_var[1]
             bad_sonde=1
             goto, write_output
         endif
@@ -609,7 +610,7 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
             caldat,julday(1,1,1970,0,0,obs_time), mm, dd, yy, hh, min, ss
             date = string(yy,mm,dd,format='(I4.4,2I2.2)') + '.' + $
                 string (hh,min, ss, format='(I2.2, 2I2.2)') 
-            print, datadir, qldir, date
+            if ds.debug gt 0 then print, datadir, qldir, date
            ;--Plot the PBL
             out_datastream = pblht.name
             pngpath = qldir+path_sep()+ds.site+path_sep()+out_datastream+path_sep() + $
