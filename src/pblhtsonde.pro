@@ -55,8 +55,8 @@ pro pblhtsonde, type, _ref_extra=extra
         /reprocess, ARGV = command_line_args(), $
        _strict_extra=extra
 
-    print, 'IDL command line args.'
-    print, command_line_args()
+    if ds.debug gt 0 then print, 'IDL command line args.'
+    if ds.debug gt 0 then print, command_line_args()
 
     stat=ds.status
 
