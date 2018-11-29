@@ -1,0 +1,712 @@
+Reading config file: ./dsproc_test.cfg
+Start Time: Thu Nov 29 18:18:50 2018
+
+===========================================================================
+PROCESS CONFIGURATION:
+===========================================================================
+
+PROCESS:    pblhtsonde VAP
+NC_INPUT:   sondewnpn a1
+NC_INPUT:   sondewnpn b1
+NC_OUTPUT:  pblhtsonde1mcfarl c1
+COMMAND:    $(VAP_BIN)/pblhtsonde -n pblhtsonde -s $(SITE) -f $(FAC) -b $(BEGIN) -e $(END) $(DEBUG) $(FORCE) $(DBALIAS) $(OUTPUT-CSV)
+RUN:        sgp C1 20120101 20120102
+
+===========================================================================
+COMMAND LINE OPTIONS:
+===========================================================================
+
+Debug Level:      4
+
+-noexit:   Not exiting when a test failes
+
+===========================================================================
+SETTING ENVIRONMENT VARIABLES:
+===========================================================================
+
+DSDB_HOME		/apps/ds
+INGEST_HOME		/home/ham/apps/process
+VAP_HOME		/home/ham/apps/process
+DATA_ROOT		/data/home/dev/vap/pblhtsonde/DATA
+DATA_HOME		/data/home/dev/vap/pblhtsonde/DATA/data
+COLLECTION_DATA		/data/home/dev/vap/pblhtsonde/DATA/data/collection
+CONF_DATA		/data/home/dev/vap/pblhtsonde/DATA/data/conf
+DATASTREAM_DATA		/data/home/dev/vap/pblhtsonde/DATA/data/datastream
+DATASTREAM_DATA_IN	/data/home/dev/vap/pblhtsonde/DATA/data/datastream
+DATASTREAM_DATA_OUT	/data/home/dev/vap/pblhtsonde/DATA/data/datastream
+LOGS_DATA		/data/home/dev/vap/pblhtsonde/DATA/data/logs
+QUICKLOOK_DATA		/data/home/dev/vap/pblhtsonde/DATA/data/www/process
+TMP_DATA		/data/home/dev/vap/pblhtsonde/DATA/data/tmp
+DSPROCTEST_OUT_DIR	/data/home/dev/vap/pblhtsonde/DATA/out
+DSPROCTEST_REF_DIR	/data/home/dev/vap/pblhtsonde/DATA/ref
+
+===========================================================================
+SETTING BIN DIRECTORIES:
+===========================================================================
+
+INGEST_BIN	/home/ham/apps/process/bin
+VAP_BIN		/home/ham/apps/process/bin
+DSDB_BIN	/apps/ds/bin
+NETCDF_BIN	/usr/bin
+
+===========================================================================
+STARTING PROCESS: pblhtsonde VAP At sgpC1 From 20120101 to 20120102
+===========================================================================
+
+Cleaning Up Files From Previous Run ...
+
+Cleaning Directory: /data/home/dev/vap/pblhtsonde/DATA/data/logs/sgp/proc_logs/sgppblhtsondeC1
+
+Cleaning Directory: /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1
+ - removed: sgppblhtsonde1mcfarlC1.c1.20120101.053000.cdf
+ - removed: sgppblhtsonde1mcfarlC1.c1.20120101.113200.cdf
+ - removed: sgppblhtsonde1mcfarlC1.c1.20120101.172700.cdf
+ - removed: sgppblhtsonde1mcfarlC1.c1.20120101.232800.cdf
+
+---------------------------------------------------------------------------
+Cleaning Previously Processed Data Times From Database ...
+
+Running: /apps/ds/bin/db_update_dstimes -a dsdb_data sgp C1 pblhtsonde VAP pblhtsonde1mcfarl c1 -delete
+
+---------------------------------------------------------------------------
+Running Commands ...
+
+Running: /home/ham/apps/process/bin/pblhtsonde -n pblhtsonde -s sgp -f C1 -b 20120101 -e 20120102 -D 4  -a dsdb_data 
+../../src/msngr.c:956           Changing debug level from 0 to 4
+
+================================================================================
+../../src/dsproc.c:2837         INITIALIZING PROCESS: sgpC1-pblhtsonde-VAP
+================================================================================
+
+../../src/dsproc.c:123          Creating process lockfile:
+../../src/dsproc.c:178           - path: /data/home/dev/vap/pblhtsonde/DATA/data/logs/sgp/lockfiles
+                                 - name: sgpC1-pblhtsonde-VAP.lock
+../../src/dsproc.c:2861         Initializing database connection: dsdb_data
+../../src/dsproc.c:2890          - db_host: devpgdb.dmf.arm.gov
+../../src/dsproc.c:2895          - db_name: dsdb_ref
+../../src/dsproc.c:2900          - db_user: dsdb_data
+../../src/dsproc.c:2951         Process version: vap-pblhtsonde-0.0-0.dev0.dirty.el6
+../../src/dsproc.c:2970         Library versions:
+                                 - libdsproc3:  adi-libdsproc3-2.46-0.el6
+                                 - libdsdb3:    dsdb-libdsdb3-1.9-4.el6
+                                 - libtrans:    afl-libtrans-2.3-2.el6
+                                 - libcds3:     afl-libcds3-1.19-2.el6
+                                 - libncds3:    afl-libncds3-1.14-3.el6
+                                 - libarmutils: afl-libarmutils-1.14-0.el6
+                                 - libdbconn:   afl-libdbconn-1.10-3.el6
+                                 - libmsngr:    afl-libmsngr-1.8-5.el6
+../../src/dsproc.c:262          Opening process log file:
+../../src/dsproc.c:350           - path: /data/home/dev/vap/pblhtsonde/DATA/data/logs/sgp/proc_logs/sgppblhtsondeC1
+                                 - name: sgppblhtsondeC1.20181100.000000.VAP
+../../src/dsproc.c:506          Checking database for 'error_mail' custodians
+../../src/dsproc.c:541           - chitra.sivaraman@pnnl.gov
+../../src/dsproc.c:506          Checking database for 'warning_mail' custodians
+../../src/dsproc.c:541           - chitra.sivaraman@pnnl.gov
+../../src/dsproc.c:506          Checking database for 'mentor_mail' custodians
+../../src/dsproc.c:580           - none found
+../../src/dsproc.c:896          Updating process start time in database: 2018-11-29 18:18:58
+../../src/dsproc.c:766          Initializing signal handlers
+../../src/dsproc_dsdb.c:665     Getting process location from database
+../../src/dsproc_dsdb.c:704      - name: Lamont, Oklahoma
+                                 - lat:  36.605 N
+                                 - lon:  -97.485 E
+                                 - alt:  318 MSL
+../../src/dsproc_dsdb.c:751     Getting site description from database
+../../src/dsproc_dsdb.c:768      - "Southern Great Plains (SGP)"
+../../src/dsproc_dsdb.c:810     Getting process configuration value
+                                 - key:   'max_run_time'
+../../src/dsproc_dsdb.c:819      - value: '0'
+../../src/dsproc_dsdb.c:810     Getting process configuration value
+                                 - key:   'data_interval'
+../../src/dsproc_dsdb.c:819      - value: '0'
+../../src/dsproc_dsdb.c:810     Getting process configuration value
+                                 - key:   'min_valid_time'
+../../src/dsproc_dsdb.c:819      - value: '694224000'
+../../src/dsproc_dsdb.c:596     Getting output datastream classes from database
+../../src/dsproc_dsdb.c:619      - pblhtsonde1mcfarl.c1
+../../src/dsproc_datastreams.c:433    sgppblhtsonde1mcfarlC1.c1: Initializing output datastream
+../../src/dsproc_datastream_files.c:1717    sgppblhtsonde1mcfarlC1.c1: Setting output datastream path: /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1
+../../src/dsproc_datastreams.c:721          sgppblhtsonde1mcfarlC1.c1: Setting output datastream format: NetCDF3
+../../src/dsproc_datastreams.c:636          sgppblhtsonde1mcfarlC1.c1: Setting output datastream control flags
+../../src/dsproc_datastreams.c:647           - DS_OVERLAP_CHECK
+../../src/dsproc_dsdb.c:348                 pblhtsonde1mcfarl.c1: Getting datastream properties from database
+../../src/dsproc_dsdb.c:378                  - null null	time:trans_bin_alignment	'1970-01-01 00:00:00'	'0.5'
+../../src/dsproc_dsdb.c:378                  - null null	time:trans_bin_width	'1970-01-01 00:00:00'	'0'
+../../src/dsproc_datastream_files.c:1955    sgppblhtsonde1mcfarlC1.c1: Setting datastream file splitting mode:
+                                             -> always create a new file when data is stored
+../../src/dsproc_datastream_dod.c:737       sgppblhtsonde1mcfarlC1.c1: Getting datastream DOD from database
+                                             - data time:   2012-01-01 00:00:00
+../../src/dsproc_datastream_dod.c:766        - DOD version: 2.0
+../../src/dsproc_dsdb.c:64                  sgppblhtsonde1mcfarlC1.c1: Getting previously processed data times
+../../src/dsproc_dsdb.c:115                  - begin time: none
+                                             - end time:   none
+../../src/dsproc_retriever.c:2115           Loading retriever definition from database
+
+================================================================================
+Retriever Definition:
+================================================================================
+
+------------------------------------------------------------
+Retriever Datastream Groups:
+------------------------------------------------------------
+
+Group: select_1
+
+    sgpsondewnpnC1.b1
+      - dep_site:       NULL
+      - dep_fac:        NULL
+      - dep_begin_date: NULL
+      - dep_end_date:   NULL
+
+    sgpsondewnpnC1.a1
+      - dep_site:       NULL
+      - dep_fac:        NULL
+      - dep_begin_date: NULL
+      - dep_end_date:   NULL
+
+------------------------------------------------------------
+Retriever Variables:
+------------------------------------------------------------
+
+Group: select_1
+
+    alt(time)
+      - input search order:
+          - sgpsondewnpnC1.b1:alt
+          - sgpsondewnpnC1.a1:alt
+      - data_type:          float
+      - units:              NULL
+      - valid_min:          NULL
+      - valid_max:          NULL
+      - valid_delta:        NULL
+      - start_offset:       0
+      - end_offset:         0
+      - required_to_run:    1
+      - retrieve_qc:        0
+      - qc_required_to_run: 0
+      - coordinate_system:  NULL
+      - output target:      NULL
+
+    deg(time)
+      - input search order:
+          - sgpsondewnpnC1.b1:deg
+          - sgpsondewnpnC1.a1:deg
+      - data_type:          float
+      - units:              NULL
+      - valid_min:          NULL
+      - valid_max:          NULL
+      - valid_delta:        NULL
+      - start_offset:       0
+      - end_offset:         0
+      - required_to_run:    1
+      - retrieve_qc:        1
+      - qc_required_to_run: 0
+      - coordinate_system:  NULL
+      - output target:      NULL
+
+    dp(time)
+      - input search order:
+          - sgpsondewnpnC1.b1:dp
+          - sgpsondewnpnC1.a1:dp
+      - data_type:          float
+      - units:              NULL
+      - valid_min:          NULL
+      - valid_max:          NULL
+      - valid_delta:        NULL
+      - start_offset:       0
+      - end_offset:         0
+      - required_to_run:    1
+      - retrieve_qc:        1
+      - qc_required_to_run: 0
+      - coordinate_system:  NULL
+      - output target:      NULL
+
+    pres(time)
+      - input search order:
+          - sgpsondewnpnC1.b1:pres
+          - sgpsondewnpnC1.a1:pres
+      - data_type:          float
+      - units:              NULL
+      - valid_min:          NULL
+      - valid_max:          NULL
+      - valid_delta:        NULL
+      - start_offset:       0
+      - end_offset:         0
+      - required_to_run:    1
+      - retrieve_qc:        1
+      - qc_required_to_run: 0
+      - coordinate_system:  NULL
+      - output target:      pblhtsonde1mcfarl.c1:atm_pres
+
+    rh(time)
+      - input search order:
+          - sgpsondewnpnC1.b1:rh
+          - sgpsondewnpnC1.a1:rh
+      - data_type:          float
+      - units:              NULL
+      - valid_min:          NULL
+      - valid_max:          NULL
+      - valid_delta:        NULL
+      - start_offset:       0
+      - end_offset:         0
+      - required_to_run:    1
+      - retrieve_qc:        1
+      - qc_required_to_run: 0
+      - coordinate_system:  NULL
+      - output target:      pblhtsonde1mcfarl.c1:rh
+
+    tdry(time)
+      - input search order:
+          - sgpsondewnpnC1.b1:tdry
+          - sgpsondewnpnC1.a1:tdry
+      - data_type:          float
+      - units:              NULL
+      - valid_min:          NULL
+      - valid_max:          NULL
+      - valid_delta:        NULL
+      - start_offset:       0
+      - end_offset:         0
+      - required_to_run:    1
+      - retrieve_qc:        1
+      - qc_required_to_run: 0
+      - coordinate_system:  NULL
+      - output target:      pblhtsonde1mcfarl.c1:air_temp
+
+    wspd(time)
+      - input search order:
+          - sgpsondewnpnC1.b1:wspd
+          - sgpsondewnpnC1.a1:wspd
+      - data_type:          float
+      - units:              NULL
+      - valid_min:          NULL
+      - valid_max:          NULL
+      - valid_delta:        NULL
+      - start_offset:       0
+      - end_offset:         0
+      - required_to_run:    1
+      - retrieve_qc:        1
+      - qc_required_to_run: 0
+      - coordinate_system:  NULL
+      - output target:      pblhtsonde1mcfarl.c1:wspd
+
+------------------------------------------------------------
+Retriever Coordinate Systems:
+------------------------------------------------------------
+
+No coordinate systems defined
+
+================================================================================
+
+../../src/dsproc_datastreams.c:433          sgpsondewnpnC1.b1: Initializing input datastream
+../../src/dsproc_datastream_files.c:1717    sgpsondewnpnC1.b1: Setting input datastream path: /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgpsondewnpnC1.b1
+../../src/dsproc_datastreams.c:721          sgpsondewnpnC1.b1: Setting input datastream format: NetCDF3
+../../src/dsproc_datastreams.c:636          sgpsondewnpnC1.b1: Setting input datastream control flags
+../../src/dsproc_dsdb.c:348                 sondewnpn.b1: Getting datastream properties from database
+../../src/dsproc_dsdb.c:378                  - null null	time:trans_bin_alignment	'1970-01-01 00:00:00'	'0.5'
+../../src/dsproc_dsdb.c:378                  - null null	time:trans_bin_width	'1970-01-01 00:00:00'	'0'
+../../src/dsproc_datastreams.c:433          sgpsondewnpnC1.a1: Initializing input datastream
+../../src/dsproc_datastream_files.c:1717    sgpsondewnpnC1.a1: Setting input datastream path: /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgpsondewnpnC1.a1
+../../src/dsproc_datastreams.c:721          sgpsondewnpnC1.a1: Setting input datastream format: NetCDF3
+../../src/dsproc_datastreams.c:636          sgpsondewnpnC1.a1: Setting input datastream control flags
+../../src/dsproc_dsdb.c:348                 sondewnpn.a1: Getting datastream properties from database
+../../src/dsproc_dsdb.c:387                  - no datastream properties defined in database
+../../src/dsproc_dsdb.c:810                 Getting process configuration value
+                                             - key:   'processing_interval'
+../../src/dsproc_dsdb.c:819                  - value: '86400'
+==== Inside init hook ====
+dsid_in:            1
+dsid_in:            2
+../../src/dsproc_datastreams.c:636          sgpsondewnpnC1.b1: Setting input datastream control flags
+../../src/dsproc_datastreams.c:651           - DS_PRESERVE_OBS
+../../src/dsproc_datastreams.c:636          sgpsondewnpnC1.a1: Setting input datastream control flags
+../../src/dsproc_datastreams.c:651           - DS_PRESERVE_OBS
+Calling dsproc_db_disconnect
+../../src/dsproc_dsdb.c:303                 ----- CLOSED DATABASE CONNECTION ------
+Caling dsproc_start_processing_loop
+
+================================================================================
+../../src/dsproc.c:3359                     PROCESSING DATA:
+                                             - from: 2012-01-01 00:00:00
+                                             - to:   2012-01-02 00:00:00
+================================================================================
+
+
+                                            ----- LOG MESSAGE ---------------------
+../../src/dsproc.c:3363                     
+                                            Processing data: 2012-01-01 00:00:00 -> 2012-01-02 00:00:00
+Caling dsproc_retrieve_data
+Begin time:Sun Jan  1 00:00:00 2012
+End time:Mon Jan  2 00:00:00 2012
+                                            ----- END LOG MESSAGE -----------------
+
+../../src/dsproc_retriever.c:2266           Retrieving input data for processing interval:
+                                             - begin time: 2012-01-01 00:00:00
+                                             - end time:   2012-01-02 00:00:00
+../../src/dsproc_retriever.c:2315           sgpsondewnpnC1.b1: Initializing datastream for current processing interval
+../../src/dsproc_retriever.c:2315           sgpsondewnpnC1.a1: Initializing datastream for current processing interval
+../../src/dsproc_retriever.c:2449           ---------------------------------------
+                                            Retrieving data for group: select_1
+                                            ---------------------------------------
+../../src/dsproc_retriever.c:837            sgpsondewnpnC1.b1: Checking for input files
+                                             - path:       /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgpsondewnpnC1.b1
+                                             - interval:   ['2012-01-01 00:00:00', '2012-01-02 00:00:00')
+../../src/dsproc_retriever.c:431             - found:      sgpsondewnpnC1.b1.20120101.053000.cdf ['2012-01-01 05:30:00', '2012-01-01 07:37:38']
+../../src/dsproc_retriever.c:431             - found:      sgpsondewnpnC1.b1.20120101.113200.cdf ['2012-01-01 11:32:00', '2012-01-01 13:23:12']
+../../src/dsproc_retriever.c:431             - found:      sgpsondewnpnC1.b1.20120101.172700.cdf ['2012-01-01 17:27:00', '2012-01-01 19:22:04']
+../../src/dsproc_retriever.c:431             - found:      sgpsondewnpnC1.b1.20120101.232800.cdf ['2012-01-01 23:28:00', '2012-01-02 01:14:06']
+../../src/dsproc_retriever.c:1272           alt:		 sgpsondewnpnC1.b1.20120101.053000.cdf->alt
+../../src/dsproc_retriever.c:1272           deg:		 sgpsondewnpnC1.b1.20120101.053000.cdf->deg
+../../src/dsproc_retriever.c:1517           qc_deg:		 sgpsondewnpnC1.b1.20120101.053000.cdf->qc_deg
+../../src/dsproc_retriever.c:1272           dp:		 sgpsondewnpnC1.b1.20120101.053000.cdf->dp
+../../src/dsproc_retriever.c:1517           qc_dp:		 sgpsondewnpnC1.b1.20120101.053000.cdf->qc_dp
+../../src/dsproc_retriever.c:1272           pres:		 sgpsondewnpnC1.b1.20120101.053000.cdf->pres
+../../src/dsproc_retriever.c:1522           qc_pres:	 sgpsondewnpnC1.b1.20120101.053000.cdf->qc_pres
+../../src/dsproc_retriever.c:1272           rh:		 sgpsondewnpnC1.b1.20120101.053000.cdf->rh
+../../src/dsproc_retriever.c:1517           qc_rh:		 sgpsondewnpnC1.b1.20120101.053000.cdf->qc_rh
+../../src/dsproc_retriever.c:1272           tdry:		 sgpsondewnpnC1.b1.20120101.053000.cdf->tdry
+../../src/dsproc_retriever.c:1522           qc_tdry:	 sgpsondewnpnC1.b1.20120101.053000.cdf->qc_tdry
+../../src/dsproc_retriever.c:1272           wspd:		 sgpsondewnpnC1.b1.20120101.053000.cdf->wspd
+../../src/dsproc_retriever.c:1522           qc_wspd:	 sgpsondewnpnC1.b1.20120101.053000.cdf->qc_wspd
+../../src/dsproc_retriever.c:1272           alt:		 sgpsondewnpnC1.b1.20120101.113200.cdf->alt
+../../src/dsproc_retriever.c:1272           deg:		 sgpsondewnpnC1.b1.20120101.113200.cdf->deg
+../../src/dsproc_retriever.c:1517           qc_deg:		 sgpsondewnpnC1.b1.20120101.113200.cdf->qc_deg
+../../src/dsproc_retriever.c:1272           dp:		 sgpsondewnpnC1.b1.20120101.113200.cdf->dp
+../../src/dsproc_retriever.c:1517           qc_dp:		 sgpsondewnpnC1.b1.20120101.113200.cdf->qc_dp
+../../src/dsproc_retriever.c:1272           pres:		 sgpsondewnpnC1.b1.20120101.113200.cdf->pres
+../../src/dsproc_retriever.c:1522           qc_pres:	 sgpsondewnpnC1.b1.20120101.113200.cdf->qc_pres
+../../src/dsproc_retriever.c:1272           rh:		 sgpsondewnpnC1.b1.20120101.113200.cdf->rh
+../../src/dsproc_retriever.c:1517           qc_rh:		 sgpsondewnpnC1.b1.20120101.113200.cdf->qc_rh
+../../src/dsproc_retriever.c:1272           tdry:		 sgpsondewnpnC1.b1.20120101.113200.cdf->tdry
+../../src/dsproc_retriever.c:1522           qc_tdry:	 sgpsondewnpnC1.b1.20120101.113200.cdf->qc_tdry
+../../src/dsproc_retriever.c:1272           wspd:		 sgpsondewnpnC1.b1.20120101.113200.cdf->wspd
+../../src/dsproc_retriever.c:1522           qc_wspd:	 sgpsondewnpnC1.b1.20120101.113200.cdf->qc_wspd
+../../src/dsproc_retriever.c:1272           alt:		 sgpsondewnpnC1.b1.20120101.172700.cdf->alt
+../../src/dsproc_retriever.c:1272           deg:		 sgpsondewnpnC1.b1.20120101.172700.cdf->deg
+../../src/dsproc_retriever.c:1517           qc_deg:		 sgpsondewnpnC1.b1.20120101.172700.cdf->qc_deg
+../../src/dsproc_retriever.c:1272           dp:		 sgpsondewnpnC1.b1.20120101.172700.cdf->dp
+../../src/dsproc_retriever.c:1517           qc_dp:		 sgpsondewnpnC1.b1.20120101.172700.cdf->qc_dp
+../../src/dsproc_retriever.c:1272           pres:		 sgpsondewnpnC1.b1.20120101.172700.cdf->pres
+../../src/dsproc_retriever.c:1522           qc_pres:	 sgpsondewnpnC1.b1.20120101.172700.cdf->qc_pres
+../../src/dsproc_retriever.c:1272           rh:		 sgpsondewnpnC1.b1.20120101.172700.cdf->rh
+../../src/dsproc_retriever.c:1517           qc_rh:		 sgpsondewnpnC1.b1.20120101.172700.cdf->qc_rh
+../../src/dsproc_retriever.c:1272           tdry:		 sgpsondewnpnC1.b1.20120101.172700.cdf->tdry
+../../src/dsproc_retriever.c:1522           qc_tdry:	 sgpsondewnpnC1.b1.20120101.172700.cdf->qc_tdry
+../../src/dsproc_retriever.c:1272           wspd:		 sgpsondewnpnC1.b1.20120101.172700.cdf->wspd
+../../src/dsproc_retriever.c:1522           qc_wspd:	 sgpsondewnpnC1.b1.20120101.172700.cdf->qc_wspd
+../../src/dsproc_retriever.c:1272           alt:		 sgpsondewnpnC1.b1.20120101.232800.cdf->alt
+../../src/dsproc_retriever.c:1272           deg:		 sgpsondewnpnC1.b1.20120101.232800.cdf->deg
+../../src/dsproc_retriever.c:1517           qc_deg:		 sgpsondewnpnC1.b1.20120101.232800.cdf->qc_deg
+../../src/dsproc_retriever.c:1272           dp:		 sgpsondewnpnC1.b1.20120101.232800.cdf->dp
+../../src/dsproc_retriever.c:1517           qc_dp:		 sgpsondewnpnC1.b1.20120101.232800.cdf->qc_dp
+../../src/dsproc_retriever.c:1272           pres:		 sgpsondewnpnC1.b1.20120101.232800.cdf->pres
+../../src/dsproc_retriever.c:1522           qc_pres:	 sgpsondewnpnC1.b1.20120101.232800.cdf->qc_pres
+../../src/dsproc_retriever.c:1272           rh:		 sgpsondewnpnC1.b1.20120101.232800.cdf->rh
+../../src/dsproc_retriever.c:1517           qc_rh:		 sgpsondewnpnC1.b1.20120101.232800.cdf->qc_rh
+../../src/dsproc_retriever.c:1272           tdry:		 sgpsondewnpnC1.b1.20120101.232800.cdf->tdry
+../../src/dsproc_retriever.c:1522           qc_tdry:	 sgpsondewnpnC1.b1.20120101.232800.cdf->qc_tdry
+../../src/dsproc_retriever.c:1272           wspd:		 sgpsondewnpnC1.b1.20120101.232800.cdf->wspd
+../../src/dsproc_retriever.c:1522           qc_wspd:	 sgpsondewnpnC1.b1.20120101.232800.cdf->qc_wspd
+../../src/dsproc_retriever.c:2492           ---------------------------------------
+                                            Retrieval Summary:
+                                            ---------------------------------------
+../../src/dsproc_retriever.c:2543           sgpsondewnpnC1.b1.20120101.053000: '2012-01-01 05:30:00' -> '2012-01-01 07:37:38', 3830 records
+../../src/dsproc_retriever.c:2543           sgpsondewnpnC1.b1.20120101.113200: '2012-01-01 11:32:00' -> '2012-01-01 13:23:12', 3337 records
+../../src/dsproc_retriever.c:2543           sgpsondewnpnC1.b1.20120101.172700: '2012-01-01 17:27:00' -> '2012-01-01 19:22:04', 3453 records
+../../src/dsproc_retriever.c:2543           sgpsondewnpnC1.b1.20120101.232800: '2012-01-01 23:28:00' -> '2012-01-02 01:14:06', 3184 records
+../../src/dsproc_retriever.c:2553           sgpsondewnpnC1.a1: removing empty datastream created by retriever
+PCDSGROUP       LONG64    =               44525808
+Retrieve status:            1
+RET_DATA    <CDSGROUP> retrieved_data
+==== Inside post-retrieval hook ====
+Site: sgp
+Facility: C1
+Userdata: {           2           1           0}
+Begin time: Sun Jan  1 00:00:00 2012
+End time: Sun Jan  1 00:00:00 2012
+RET_DATA    <CDSGROUP> retrieved_data
+---------- PROCESSING OBSERVATION #           2sgpsondewnpnC1.b1.20120101.053000
+number of times=         3830
+time of first sample=             1325395800
+time of last sample=             1325403458
+base_time  bbss =            1325376000
+../../src/dsproc_datasets.c:141             sgppblhtsonde1mcfarlC1.c1: Creating dataset
+../../src/dsproc_datastream_dod.c:927       sgppblhtsonde1mcfarlC1.c1: Setting runtime attribute values
+../../src/dsproc_datasets.c:235             sgppblhtsonde1mcfarlC1.c1: Setting location data
+../../src/dsproc_map_data.c:1414            Setting data mapping time range:
+                                             - begin: 2012-01-01 05:30:00
+                                             - end:   2012-01-01 07:37:39
+../../src/dsproc_map_data.c:1123            Mapping input variable to output variable
+                                             - input:  sgpsondewnpnC1.b1.20120101.053000->pres
+                                             - output: sgppblhtsonde1mcfarlC1.c1->atm_pres
+../../src/dsproc_map_data.c:1123            Mapping input variable to output variable
+                                             - input:  sgpsondewnpnC1.b1.20120101.053000->rh
+                                             - output: sgppblhtsonde1mcfarlC1.c1->rh
+../../src/dsproc_map_data.c:1123            Mapping input variable to output variable
+                                             - input:  sgpsondewnpnC1.b1.20120101.053000->tdry
+                                             - output: sgppblhtsonde1mcfarlC1.c1->air_temp
+../../src/dsproc_map_data.c:1123            Mapping input variable to output variable
+                                             - input:  sgpsondewnpnC1.b1.20120101.053000->wspd
+                                             - output: sgppblhtsonde1mcfarlC1.c1->wspd
+The config path is /data/home/dev/vap/pblhtsonde/DATA/data/conf
+          61Number of vars in output           1        3830
+The maximum pbl height is set to       4315.00
+/data/home/dev/vap/pblhtsonde/DATA/data/datastream
+/data/home/dev/vap/pblhtsonde/DATA/data/www/process20120101.053000
+../../src/dsproc_print.c:168                Creating dataset dump file:
+                                             - dataset: /sgppblhtsonde1mcfarlC1.c1
+                                             - file:    ./debug_dumps/sgppblhtsonde1mcfarlC1.c1.20120101.053000.post_retrieval.debug
+../../src/dsproc_dataset_filters.c:302      sgppblhtsonde1mcfarlC1.c1: Checking for overlapping samples in dataset
+../../src/dsproc_dataset_store.c:864        sgppblhtsonde1mcfarlC1.c1: Validating time range ['2012-01-01 05:30:00' -> '2012-01-01 07:37:38']
+
+                                            ----- LOG MESSAGE ---------------------
+../../src/dsproc_dataset_store.c:1015       Storing:    sgppblhtsonde1mcfarlC1.c1 data from '2012-01-01 05:30:00' to '2012-01-01 07:37:38': 3830 records
+                                            ----- END LOG MESSAGE -----------------
+
+../../src/dsproc_dataset_store.c:1107       sgppblhtsonde1mcfarlC1.c1: Creating new file for record set:
+                                             - times:  '2012-01-01 05:30:00' to '2012-01-01 07:37:38'
+                                             - file:   /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.053000.cdf
+../../src/dsproc_datastreams.c:864          sgppblhtsonde1mcfarlC1.c1: Updating output datastream data stats
+                                             - num records: 3830
+                                             - begin time:  2012-01-01 05:30:00
+                                             - end time:    2012-01-01 07:37:38
+/home/ham/apps/process/bytecode/pblhtsonde.sav:0    dataset successfully stored
+---------- PROCESSING OBSERVATION #           3sgpsondewnpnC1.b1.20120101.113200
+number of times=         3337
+time of first sample=             1325417520
+time of last sample=             1325424192
+base_time  bbss =            1325376000
+../../src/dsproc_datasets.c:141                     sgppblhtsonde1mcfarlC1.c1: Creating dataset
+../../src/dsproc_datastream_dod.c:927               sgppblhtsonde1mcfarlC1.c1: Setting runtime attribute values
+../../src/dsproc_datasets.c:235                     sgppblhtsonde1mcfarlC1.c1: Setting location data
+../../src/dsproc_map_data.c:1414                    Setting data mapping time range:
+                                                     - begin: 2012-01-01 11:32:00
+                                                     - end:   2012-01-01 13:23:13
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.113200->pres
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->atm_pres
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.113200->rh
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->rh
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.113200->tdry
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->air_temp
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.113200->wspd
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->wspd
+The config path is /data/home/dev/vap/pblhtsonde/DATA/data/conf
+          61Number of vars in output           2        3337
+The maximum pbl height is set to       4315.00
+/data/home/dev/vap/pblhtsonde/DATA/data/datastream
+/data/home/dev/vap/pblhtsonde/DATA/data/www/process20120101.113200
+../../src/dsproc_print.c:168                        Creating dataset dump file:
+                                                     - dataset: /sgppblhtsonde1mcfarlC1.c1
+                                                     - file:    ./debug_dumps/sgppblhtsonde1mcfarlC1.c1.20120101.113200.post_retrieval.debug
+../../src/dsproc_dataset_filters.c:302              sgppblhtsonde1mcfarlC1.c1: Checking for overlapping samples in dataset
+../../src/dsproc_dataset_store.c:864                sgppblhtsonde1mcfarlC1.c1: Validating time range ['2012-01-01 11:32:00' -> '2012-01-01 13:23:12']
+
+                                                    ----- LOG MESSAGE ---------------------
+../../src/dsproc_dataset_store.c:1015               Storing:    sgppblhtsonde1mcfarlC1.c1 data from '2012-01-01 11:32:00' to '2012-01-01 13:23:12': 3337 records
+                                                    ----- END LOG MESSAGE -----------------
+
+../../src/dsproc_dataset_store.c:1107               sgppblhtsonde1mcfarlC1.c1: Creating new file for record set:
+                                                     - times:  '2012-01-01 11:32:00' to '2012-01-01 13:23:12'
+                                                     - file:   /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.113200.cdf
+../../src/dsproc_datastreams.c:864                  sgppblhtsonde1mcfarlC1.c1: Updating output datastream data stats
+                                                     - num records: 3337
+                                                     - begin time:  2012-01-01 11:32:00
+                                                     - end time:    2012-01-01 13:23:12
+/home/ham/apps/process/bytecode/pblhtsonde.sav:0    dataset successfully stored
+---------- PROCESSING OBSERVATION #           4sgpsondewnpnC1.b1.20120101.172700
+number of times=         3453
+time of first sample=             1325438820
+time of last sample=             1325445724
+base_time  bbss =            1325376000
+../../src/dsproc_datasets.c:141                     sgppblhtsonde1mcfarlC1.c1: Creating dataset
+../../src/dsproc_datastream_dod.c:927               sgppblhtsonde1mcfarlC1.c1: Setting runtime attribute values
+../../src/dsproc_datasets.c:235                     sgppblhtsonde1mcfarlC1.c1: Setting location data
+../../src/dsproc_map_data.c:1414                    Setting data mapping time range:
+                                                     - begin: 2012-01-01 17:27:00
+                                                     - end:   2012-01-01 19:22:05
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.172700->pres
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->atm_pres
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.172700->rh
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->rh
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.172700->tdry
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->air_temp
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.172700->wspd
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->wspd
+The config path is /data/home/dev/vap/pblhtsonde/DATA/data/conf
+          61Number of vars in output           3        3453
+The maximum pbl height is set to       4315.00
+/data/home/dev/vap/pblhtsonde/DATA/data/datastream
+/data/home/dev/vap/pblhtsonde/DATA/data/www/process20120101.172700
+../../src/dsproc_print.c:168                        Creating dataset dump file:
+                                                     - dataset: /sgppblhtsonde1mcfarlC1.c1
+                                                     - file:    ./debug_dumps/sgppblhtsonde1mcfarlC1.c1.20120101.172700.post_retrieval.debug
+../../src/dsproc_dataset_filters.c:302              sgppblhtsonde1mcfarlC1.c1: Checking for overlapping samples in dataset
+../../src/dsproc_dataset_store.c:864                sgppblhtsonde1mcfarlC1.c1: Validating time range ['2012-01-01 17:27:00' -> '2012-01-01 19:22:04']
+
+                                                    ----- LOG MESSAGE ---------------------
+../../src/dsproc_dataset_store.c:1015               Storing:    sgppblhtsonde1mcfarlC1.c1 data from '2012-01-01 17:27:00' to '2012-01-01 19:22:04': 3453 records
+                                                    ----- END LOG MESSAGE -----------------
+
+../../src/dsproc_dataset_store.c:1107               sgppblhtsonde1mcfarlC1.c1: Creating new file for record set:
+                                                     - times:  '2012-01-01 17:27:00' to '2012-01-01 19:22:04'
+                                                     - file:   /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.172700.cdf
+../../src/dsproc_datastreams.c:864                  sgppblhtsonde1mcfarlC1.c1: Updating output datastream data stats
+                                                     - num records: 3453
+                                                     - begin time:  2012-01-01 17:27:00
+                                                     - end time:    2012-01-01 19:22:04
+/home/ham/apps/process/bytecode/pblhtsonde.sav:0    dataset successfully stored
+---------- PROCESSING OBSERVATION #           5sgpsondewnpnC1.b1.20120101.232800
+number of times=         3184
+time of first sample=             1325460480
+time of last sample=             1325466846
+base_time  bbss =            1325376000
+../../src/dsproc_datasets.c:141                     sgppblhtsonde1mcfarlC1.c1: Creating dataset
+../../src/dsproc_datastream_dod.c:927               sgppblhtsonde1mcfarlC1.c1: Setting runtime attribute values
+../../src/dsproc_datasets.c:235                     sgppblhtsonde1mcfarlC1.c1: Setting location data
+../../src/dsproc_map_data.c:1414                    Setting data mapping time range:
+                                                     - begin: 2012-01-01 23:28:00
+                                                     - end:   2012-01-02 01:14:07
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.232800->pres
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->atm_pres
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.232800->rh
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->rh
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.232800->tdry
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->air_temp
+../../src/dsproc_map_data.c:1123                    Mapping input variable to output variable
+                                                     - input:  sgpsondewnpnC1.b1.20120101.232800->wspd
+                                                     - output: sgppblhtsonde1mcfarlC1.c1->wspd
+The config path is /data/home/dev/vap/pblhtsonde/DATA/data/conf
+          61Number of vars in output           4        3184
+The maximum pbl height is set to       4315.00
+/data/home/dev/vap/pblhtsonde/DATA/data/datastream
+/data/home/dev/vap/pblhtsonde/DATA/data/www/process20120101.232800
+../../src/dsproc_print.c:168                        Creating dataset dump file:
+                                                     - dataset: /sgppblhtsonde1mcfarlC1.c1
+                                                     - file:    ./debug_dumps/sgppblhtsonde1mcfarlC1.c1.20120101.232800.post_retrieval.debug
+../../src/dsproc_dataset_filters.c:302              sgppblhtsonde1mcfarlC1.c1: Checking for overlapping samples in dataset
+../../src/dsproc_dataset_store.c:864                sgppblhtsonde1mcfarlC1.c1: Validating time range ['2012-01-01 23:28:00' -> '2012-01-02 01:14:06']
+
+                                                    ----- LOG MESSAGE ---------------------
+../../src/dsproc_dataset_store.c:1015               Storing:    sgppblhtsonde1mcfarlC1.c1 data from '2012-01-01 23:28:00' to '2012-01-02 01:14:06': 3184 records
+                                                    ----- END LOG MESSAGE -----------------
+
+../../src/dsproc_dataset_store.c:1107               sgppblhtsonde1mcfarlC1.c1: Creating new file for record set:
+                                                     - times:  '2012-01-01 23:28:00' to '2012-01-02 01:14:06'
+                                                     - file:   /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.232800.cdf
+../../src/dsproc_datastreams.c:864                  sgppblhtsonde1mcfarlC1.c1: Updating output datastream data stats
+                                                     - num records: 3184
+                                                     - begin time:  2012-01-01 23:28:00
+                                                     - end time:    2012-01-02 01:14:06
+/home/ham/apps/process/bytecode/pblhtsonde.sav:0    dataset successfully stored
+breaking with obs =            5
+Caling dsproc_start_processing_loop
+==== Inside finish hook ====
+Userdata: {           2           1           0}
+Calling dsproc_finish
+
+================================================================================
+../../src/dsproc.c:3421                             EXITING PROCESS
+================================================================================
+
+
+                                                    ----- LOG MESSAGE ---------------------
+../../src/dsproc.c:3475                             
+                                                    Datastream Stats: sgppblhtsonde1mcfarlC1.c1
+                                                     - begin time:    2012-01-01 05:30:00
+                                                     - end time:      2012-01-02 01:14:06
+../../src/dsproc.c:3491                              - total records: 13804
+                                                    ----- END LOG MESSAGE -----------------
+
+../../src/dsproc.c:3451                             
+                                                    Datastream Stats: sgpsondewnpnC1.b1
+                                                     - begin time:    2012-01-01 05:30:00
+                                                     - end time:      2012-01-02 01:14:06
+                                                     - total records: 13804
+../../src/dsproc_dsdb.c:264                         ----- OPENING DATABASE CONNECTION -----
+../../src/dsproc.c:3554                             Updating process status in database
+../../src/dsproc_dsdb.c:160                         Storing updated datastream times in database
+../../src/dsproc_dsdb.c:199                          - sgppblhtsonde1mcfarlC1.c1:
+                                                        - begin time: 2012-01-01 05:30:00
+                                                        - end time:   2012-01-02 01:14:06
+../../src/dsproc_dsdb.c:303                         ----- CLOSED DATABASE CONNECTION ------
+../../src/dsproc.c:3676                             Adding process status to mail messages
+../../src/dsproc.c:3710                             Adding process status to log file
+
+                                                    ----- LOG MESSAGE ---------------------
+../../src/dsproc.c:3715                             
+                                                    Current Status (2018-11-29 18:19:01):
+                                                    Process: sgpC1-pblhtsonde-VAP
+                                                    Version: vap-pblhtsonde-0.0-0.dev0.dirty.el6
+                                                    Host:    lead
+                                                    Status:  Successful
+                                                    ----- END LOG MESSAGE -----------------
+
+../../src/dsproc.c:224                              Removing process lockfile:
+                                                     - path: /data/home/dev/vap/pblhtsonde/DATA/data/logs/sgp/lockfiles
+                                                     - name: sgpC1-pblhtsonde-VAP.lock
+../../src/dsproc.c:1671                             Freeing internal memory
+../../src/dsproc.c:3758                             Suggested exit value: 0 (successful)
+suggested exit status:            0
+IDL command line args.
+-n pblhtsonde -s sgp -f C1 -b 20120101 -e 20120102 -D 4 -a dsdb_data
+
+---------------------------------------------------------------------------
+Looking For NetCDF Files In:
+/data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1
+
+Checking File: sgppblhtsonde1mcfarlC1.c1.20120101.053000.cdf
+
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.053000.diff
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.053000.dump
+Running: /usr/bin/ncdump /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.053000.cdf > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.053000.dump
+Running: diff /data/home/dev/vap/pblhtsonde/DATA/ref/sgppblhtsonde1mcfarlC1.c1.20120101.053000.dump /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.053000.dump > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.053000.diff
+Checking Diff File: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.053000.diff
+
+--- PASSED DIFF CHECK: sgppblhtsonde1mcfarlC1.c1.20120101.053000.cdf ---
+
+Checking File: sgppblhtsonde1mcfarlC1.c1.20120101.113200.cdf
+
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.113200.diff
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.113200.dump
+Running: /usr/bin/ncdump /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.113200.cdf > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.113200.dump
+Running: diff /data/home/dev/vap/pblhtsonde/DATA/ref/sgppblhtsonde1mcfarlC1.c1.20120101.113200.dump /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.113200.dump > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.113200.diff
+Checking Diff File: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.113200.diff
+
+--- PASSED DIFF CHECK: sgppblhtsonde1mcfarlC1.c1.20120101.113200.cdf ---
+
+Checking File: sgppblhtsonde1mcfarlC1.c1.20120101.172700.cdf
+
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.172700.diff
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.172700.dump
+Running: /usr/bin/ncdump /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.172700.cdf > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.172700.dump
+Running: diff /data/home/dev/vap/pblhtsonde/DATA/ref/sgppblhtsonde1mcfarlC1.c1.20120101.172700.dump /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.172700.dump > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.172700.diff
+Checking Diff File: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.172700.diff
+
+--- PASSED DIFF CHECK: sgppblhtsonde1mcfarlC1.c1.20120101.172700.cdf ---
+
+Checking File: sgppblhtsonde1mcfarlC1.c1.20120101.232800.cdf
+
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.232800.diff
+Removing: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.232800.dump
+Running: /usr/bin/ncdump /data/home/dev/vap/pblhtsonde/DATA/data/datastream/sgp/sgppblhtsonde1mcfarlC1.c1/sgppblhtsonde1mcfarlC1.c1.20120101.232800.cdf > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.232800.dump
+Running: diff /data/home/dev/vap/pblhtsonde/DATA/ref/sgppblhtsonde1mcfarlC1.c1.20120101.232800.dump /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.232800.dump > /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.232800.diff
+Checking Diff File: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC1.c1.20120101.232800.diff
+
+--- PASSED DIFF CHECK: sgppblhtsonde1mcfarlC1.c1.20120101.232800.cdf ---
+
+===========================================================================
+
+Exit Code:  0
+Run Time:   21 seconds
+Close time: Thu Nov 29 18:19:11 2018
+
