@@ -238,10 +238,10 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
         conf_data_home = getenv("CONF_DATA")
         if(n_elements(conf_data_home) eq 0) then begin
           print, '      *** CONF_DATA is not defined - quitting ABNORMALLY'
-          abort, 'No conf_data environment variable set.'
+          ds.abort, 'No conf_data environment variable set.'
         endif
         ;Need to talk to Krista to see if we should not hard code this vapname
-        read_config, conf_data_home, 'pblhtsonde1mcfarl', ds.site, ds.facility
+        read_config, conf_data_home, 'pblhtsonde1mcfarl', ds.site, ds.facility, ds
         
         ;Should the observation be increased.
         irh= bbss.get_var('rh')
