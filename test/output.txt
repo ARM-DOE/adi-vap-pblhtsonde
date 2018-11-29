@@ -1,5 +1,5 @@
 Reading config file: ./dsproc_test.cfg
-Start Time: Thu Nov 29 18:18:50 2018
+Start Time: Thu Nov 29 21:27:21 2018
 
 ===========================================================================
 PROCESS CONFIGURATION:
@@ -104,7 +104,7 @@ Running: /home/ham/apps/process/bin/pblhtsonde -n pblhtsonde -s sgp -f C1 -b 201
 ../../src/dsproc.c:541           - chitra.sivaraman@pnnl.gov
 ../../src/dsproc.c:506          Checking database for 'mentor_mail' custodians
 ../../src/dsproc.c:580           - none found
-../../src/dsproc.c:896          Updating process start time in database: 2018-11-29 18:18:58
+../../src/dsproc.c:896          Updating process start time in database: 2018-11-29 21:27:50
 ../../src/dsproc.c:766          Initializing signal handlers
 ../../src/dsproc_dsdb.c:665     Getting process location from database
 ../../src/dsproc_dsdb.c:704      - name: Lamont, Oklahoma
@@ -414,7 +414,7 @@ End time:Mon Jan  2 00:00:00 2012
 ../../src/dsproc_retriever.c:2543           sgpsondewnpnC1.b1.20120101.172700: '2012-01-01 17:27:00' -> '2012-01-01 19:22:04', 3453 records
 ../../src/dsproc_retriever.c:2543           sgpsondewnpnC1.b1.20120101.232800: '2012-01-01 23:28:00' -> '2012-01-02 01:14:06', 3184 records
 ../../src/dsproc_retriever.c:2553           sgpsondewnpnC1.a1: removing empty datastream created by retriever
-PCDSGROUP       LONG64    =               44525808
+PCDSGROUP       LONG64    =               40631632
 Retrieve status:            1
 RET_DATA    <CDSGROUP> retrieved_data
 ==== Inside post-retrieval hook ====
@@ -644,7 +644,7 @@ Calling dsproc_finish
 
                                                     ----- LOG MESSAGE ---------------------
 ../../src/dsproc.c:3715                             
-                                                    Current Status (2018-11-29 18:19:01):
+                                                    Current Status (2018-11-29 21:27:52):
                                                     Process: sgpC1-pblhtsonde-VAP
                                                     Version: vap-pblhtsonde-0.0-0.dev0.dirty.el6
                                                     Host:    lead
@@ -707,6 +707,6 @@ Checking Diff File: /data/home/dev/vap/pblhtsonde/DATA/out/sgppblhtsonde1mcfarlC
 ===========================================================================
 
 Exit Code:  0
-Run Time:   21 seconds
-Close time: Thu Nov 29 18:19:11 2018
+Run Time:   38 seconds
+Close time: Thu Nov 29 21:27:59 2018
 
