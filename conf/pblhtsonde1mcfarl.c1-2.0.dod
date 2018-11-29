@@ -1,0 +1,1649 @@
+%gDOD = (
+
+  'ds_class'    => 'pblhtsonde1mcfarl.c1',
+  'dod_version' => '2.0',
+
+  'dims' => [
+    {
+      'name'   => 'time',
+      'length' => 0,
+    },
+    {
+      'name'   => 'height_ss',
+    },
+    {
+      'name'   => 'layer',
+      'length' => 5,
+    },
+  ],
+  'atts' => [
+    {
+      'name'  => 'command_line',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'process_version',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'dod_version',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'site_id',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'platform_id',
+      'type'  => 'char',
+      'value' => 'pblhtsonde1mcfarl',
+    },
+    {
+      'name'  => 'facility_id',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'data_level',
+      'type'  => 'char',
+      'value' => 'c1',
+    },
+    {
+      'name'  => 'datastream',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'inversion_strength_threshold',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'instability_threshold',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'overshoot_threshold',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'reference_1',
+      'type'  => 'char',
+      'value' => 'Heffter, J. L., 1980: Transport layer depth calculations. Second Joint Conference on Applications of Air Pollution Meteorology, New Orleans, LA (1980).',
+    },
+    {
+      'name'  => 'reference_2',
+      'type'  => 'char',
+      'value' => 'Liu, S. and X. Z. Liang, 2010: Observed Diurnal Cycle Climatology of Planetary Boundary Layer Height. J. Climate, 23, 5790-5807.',
+    },
+    {
+      'name'  => 'input_datastreams',
+      'type'  => 'char',
+    },
+    {
+      'name'  => 'input_datastreams_description',
+      'type'  => 'char',
+      'value' => 'A string consisting of the datastream(s), datastream version(s), and datastream date (range).',
+    },
+    {
+      'name'  => 'history',
+      'type'  => 'char',
+    },
+  ],
+  'vars' => [
+    {
+      'name' => 'base_time',
+      'type' => 'int',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'string',
+          'type'  => 'char',
+        },
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Base time in Epoch',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'seconds since 1970-1-1 0:00:00 0:00',
+        },
+      ],
+    },
+    {
+      'name' => 'time_offset',
+      'type' => 'double',
+      'dims' => 'time',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Time offset from base_time',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+        },
+        {
+          'name'  => 'ancillary_variables',
+          'type'  => 'char',
+          'value' => 'base_time',
+        },
+      ],
+    },
+    {
+      'name' => 'time',
+      'type' => 'double',
+      'dims' => 'time',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Time offset from midnight',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+        },
+      ],
+    },
+    {
+      'name' => 'height_ss',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Height above mean sea level subsampled at 5 mb resolution',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '40000',
+        },
+      ],
+    },
+    {
+      'name' => 'layer',
+      'type' => 'int',
+      'dims' => 'layer',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Inversion layer number for Heffter (1980) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+      ],
+    },
+    {
+      'name' => 'atm_pres',
+      'type' => 'float',
+      'dims' => 'time',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Atmospheric pressure',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'hPa',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '1100',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'air_temp',
+      'type' => 'float',
+      'dims' => 'time',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Dry bulb ambient air temperature',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'degC',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '-90',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '50',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'wspd',
+      'type' => 'float',
+      'dims' => 'time',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Wind speed',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm/s',
+        },
+        {
+          'name'  => 'standard_name',
+          'type'  => 'char',
+          'value' => 'wind_speed',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '100',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'comment',
+          'type'  => 'char',
+          'value' => 'Wind speed values greater than 33.5 m/s below 50 m are set to missing value',
+        },
+      ],
+    },
+    {
+      'name' => 'rh',
+      'type' => 'float',
+      'dims' => 'time',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Relative humidity',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => '%',
+        },
+        {
+          'name'  => 'standard_name',
+          'type'  => 'char',
+          'value' => 'relative_humidity',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '100',
+        },
+        {
+          'name'  => 'resolution',
+          'type'  => 'float',
+          'value' => '1',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'pbl_height_heffter',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Planetary boundary layer height above mean sea level calculated using the Heffter (1980) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'standard_name',
+          'type'  => 'char',
+          'value' => 'atmosphere_boundary_layer_thickness',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'ancillary_variables',
+          'type'  => 'char',
+          'value' => 'qc_pbl_height_heffter',
+        },
+        {
+          'name'  => 'comment',
+          'type'  => 'char',
+          'value' => 'valid_min is site elevation; valid_max is site elevation plus 4000 m',
+        },
+      ],
+    },
+    {
+      'name' => 'qc_pbl_height_heffter',
+      'type' => 'int',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Quality check results on field: Planetary boundary layer height above mean sea level calculated using the Heffter (1980) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+        {
+          'name'  => 'flag_method',
+          'type'  => 'char',
+          'value' => 'bit',
+        },
+        {
+          'name'  => 'description',
+          'type'  => 'char',
+          'value' => 'This field contains bit packed integer values where each bit represents a QC test on the data.  Non-zero bits indicate the QC condition given in the description.  A value of zero (no bits set) indicates the data has not failed any QC test.',
+        },
+        {
+          'name'  => 'bit_1_description',
+          'type'  => 'char',
+          'value' => 'Data value not available in input file; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_1_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_2_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not have enough air_temp values; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_2_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_3_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not reach minimum height of 1000 m; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_3_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_4_description',
+          'type'  => 'char',
+          'value' => 'No sonde atm_pres values greater than 200 hPa; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_4_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_5_description',
+          'type'  => 'char',
+          'value' => 'Change of 30 degrees or more in sonde air_temp in first 10 seconds of sounding; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_5_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_6_description',
+          'type'  => 'char',
+          'value' => 'Sonde air_temp failed valid_min or valid_max check; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_6_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_7_description',
+          'type'  => 'char',
+          'value' => 'Sonde atm_pres value closest to the surface is not valid; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_7_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_8_description',
+          'type'  => 'char',
+          'value' => 'Value is greater than valid_max; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_8_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_9_description',
+          'type'  => 'char',
+          'value' => 'Algorithm failed; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_9_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_10_description',
+          'type'  => 'char',
+          'value' => 'Normally calculated PBL height was > 4 km or inversion layer used in calculation did not have a potential temperature difference > 2K.  PBL height set to height of maximum potential temperature gradient.',
+        },
+        {
+          'name'  => 'bit_10_assessment',
+          'type'  => 'char',
+          'value' => 'Indeterminate',
+        },
+      ],
+    },
+    {
+      'name' => 'pbl_regime_type_liu_liang',
+      'type' => 'int',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Planetary boundary layer regime type determined by Liu and Liang (2010) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'int',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'flag_values',
+          'type'  => 'char',
+          'value' => '0, 1, 2',
+        },
+        {
+          'name'  => 'flag_meanings',
+          'type'  => 'char',
+          'value' => 'neutral_boundary_layer stable_boundary_layer convective_boundary_layer',
+        },
+        {
+          'name'  => 'flag_0_description',
+          'type'  => 'char',
+          'value' => 'Neutral boundary layer',
+        },
+        {
+          'name'  => 'flag_1_description',
+          'type'  => 'char',
+          'value' => 'Stable boundary layer',
+        },
+        {
+          'name'  => 'flag_2_description',
+          'type'  => 'char',
+          'value' => 'Convective boundary layer',
+        },
+      ],
+    },
+    {
+      'name' => 'qc_pbl_regime_type_liu_liang',
+      'type' => 'int',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Quality check results on field: Planetary boundary layer regime type determined by Liu and Liang (2010) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+        {
+          'name'  => 'flag_method',
+          'type'  => 'char',
+          'value' => 'bit',
+        },
+        {
+          'name'  => 'description',
+          'type'  => 'char',
+          'value' => 'This field contains bit packed integer values where each bit represents a QC test on the data.  Non-zero bits indicate the QC condition given in the description.  A value of zero (no bits set) indicates the data has not failed any QC test.',
+        },
+        {
+          'name'  => 'bit_1_description',
+          'type'  => 'char',
+          'value' => 'Data value not available in input file; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_1_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_2_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not have enough air_temp values; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_2_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_3_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not reach minimum height of 1000 m; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_3_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_4_description',
+          'type'  => 'char',
+          'value' => 'No sonde atmos_pressure values greater than 200 hPa; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_4_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_5_description',
+          'type'  => 'char',
+          'value' => 'Change of 30 degrees or more in sonde air_temp in first 10 seconds of sounding; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_5_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_6_description',
+          'type'  => 'char',
+          'value' => 'Sonde air_temp failed valid_min or valid_max check; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_6_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_7_description',
+          'type'  => 'char',
+          'value' => 'In calculation, value of theta_ss less than 1; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_7_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_8_description',
+          'type'  => 'char',
+          'value' => 'Value of pbl_height_liu_liang greater than valid_max; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_8_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_9_description',
+          'type'  => 'char',
+          'value' => 'Algorithm failed; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_9_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+      ],
+    },
+    {
+      'name' => 'pbl_height_liu_liang',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Planetary boundary layer height above mean sea level calculated by Liu and Liang (2010) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'standard_name',
+          'type'  => 'char',
+          'value' => 'atmosphere_boundary_layer_thickness',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'ancillary_variables',
+          'type'  => 'char',
+          'value' => 'qc_pbl_height_liu_liang pbl_regime_type_liu_liang',
+        },
+        {
+          'name'  => 'comment',
+          'type'  => 'char',
+          'value' => 'valid_min is site elevation; valid_max is site elevation plus 4000 m',
+        },
+      ],
+    },
+    {
+      'name' => 'qc_pbl_height_liu_liang',
+      'type' => 'int',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Quality check results on field: Planetary boundary layer height above mean sea level calculated by Liu and Liang (2010) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+        {
+          'name'  => 'flag_method',
+          'type'  => 'char',
+          'value' => 'bit',
+        },
+        {
+          'name'  => 'description',
+          'type'  => 'char',
+          'value' => 'This field contains bit packed integer values where each bit represents a QC test on the data.  Non-zero bits indicate the QC condition given in the description.  A value of zero (no bits set) indicates the data has not failed any QC test.',
+        },
+        {
+          'name'  => 'bit_1_description',
+          'type'  => 'char',
+          'value' => 'Data value not available in input file; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_1_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_2_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not have enough air_temp values; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_2_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_3_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not reach minimum height of 1000 m; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_3_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_4_description',
+          'type'  => 'char',
+          'value' => 'No sonde atm_pres values greater than 200 hPa; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_4_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_5_description',
+          'type'  => 'char',
+          'value' => 'Change of 30 degrees or more in sonde air_temp in first 10 seconds of sounding; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_5_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_6_description',
+          'type'  => 'char',
+          'value' => 'Sonde air_temp failed valid_min or valid_max check; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_6_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_7_description',
+          'type'  => 'char',
+          'value' => 'In calculation, value of theta_ss less than 1; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_7_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_8_description',
+          'type'  => 'char',
+          'value' => 'Value is greater than valid_max; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_8_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_9_description',
+          'type'  => 'char',
+          'value' => 'Algorithm failed; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_9_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+      ],
+    },
+    {
+      'name' => 'pbl_height_bulk_richardson_pt25',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.25',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'standard_name',
+          'type'  => 'char',
+          'value' => 'atmosphere_boundary_layer_thickness',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'ancillary_variables',
+          'type'  => 'char',
+          'value' => 'qc_pbl_height_bulk_richardson_pt25',
+        },
+        {
+          'name'  => 'comment',
+          'type'  => 'char',
+          'value' => 'valid_min is site elevation; valid_max is site elevation plus 4000 m',
+        },
+      ],
+    },
+    {
+      'name' => 'qc_pbl_height_bulk_richardson_pt25',
+      'type' => 'int',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Quality check results on field: Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.25',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+        {
+          'name'  => 'flag_method',
+          'type'  => 'char',
+          'value' => 'bit',
+        },
+        {
+          'name'  => 'description',
+          'type'  => 'char',
+          'value' => 'This field contains bit packed integer values where each bit represents a QC test on the data.  Non-zero bits indicate the QC condition given in the description.  A value of zero (no bits set) indicates the data has not failed any QC test.',
+        },
+        {
+          'name'  => 'bit_1_description',
+          'type'  => 'char',
+          'value' => 'Data value not available in input file; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_1_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_2_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not have enough air_temp values; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_2_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_3_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not reach minimum height of 1000 m; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_3_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_4_description',
+          'type'  => 'char',
+          'value' => 'No sonde atm_pres values greater than 200 hPa; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_4_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_5_description',
+          'type'  => 'char',
+          'value' => 'Change of 30 degrees or more in sonde air_temp in first 10 seconds of sounding; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_5_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_6_description',
+          'type'  => 'char',
+          'value' => 'Sonde air_temp failed valid_min or valid_max check; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_6_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_7_description',
+          'type'  => 'char',
+          'value' => 'In calculation, value of theta_ss less than 1; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_7_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_8_description',
+          'type'  => 'char',
+          'value' => 'Value is greater than valid_max; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_8_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_9_description',
+          'type'  => 'char',
+          'value' => 'Algorithm failed; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_9_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+      ],
+    },
+    {
+      'name' => 'pbl_height_bulk_richardson_pt5',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.5',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'standard_name',
+          'type'  => 'char',
+          'value' => 'atmosphere_boundary_layer_thickness',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'ancillary_variables',
+          'type'  => 'char',
+          'value' => 'qc_pbl_height_bulk_richardson_pt5',
+        },
+        {
+          'name'  => 'comment',
+          'type'  => 'char',
+          'value' => 'valid_min is site elevation; valid_max is site elevation plus 4000 m',
+        },
+      ],
+    },
+    {
+      'name' => 'qc_pbl_height_bulk_richardson_pt5',
+      'type' => 'int',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Quality check results on field: Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.5',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+        {
+          'name'  => 'flag_method',
+          'type'  => 'char',
+          'value' => 'bit',
+        },
+        {
+          'name'  => 'description',
+          'type'  => 'char',
+          'value' => 'This field contains bit packed integer values where each bit represents a QC test on the data.  Non-zero bits indicate the QC condition given in the description.  A value of zero (no bits set) indicates the data has not failed any QC test.',
+        },
+        {
+          'name'  => 'bit_1_description',
+          'type'  => 'char',
+          'value' => 'Data value not available in input file; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_1_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_2_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not have enough air_temp values; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_2_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_3_description',
+          'type'  => 'char',
+          'value' => 'Sonde does not reach minimum height of 1000 m; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_3_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_4_description',
+          'type'  => 'char',
+          'value' => 'No sonde atm_pres values greater than 200 hPa; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_4_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_5_description',
+          'type'  => 'char',
+          'value' => 'Change of 30 degrees or more in sonde air_temp in first 10 seconds of sounding; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_5_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_6_description',
+          'type'  => 'char',
+          'value' => 'Sonde air_temp failed valid_min or valid_max check; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_6_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_7_description',
+          'type'  => 'char',
+          'value' => 'In calculation, value of theta_ss less than 1; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_7_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_8_description',
+          'type'  => 'char',
+          'value' => 'Value is greater than valid_max; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_8_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+        {
+          'name'  => 'bit_9_description',
+          'type'  => 'char',
+          'value' => 'Algorithm failed; data value set to missing_value in output file.',
+        },
+        {
+          'name'  => 'bit_9_assessment',
+          'type'  => 'char',
+          'value' => 'Bad',
+        },
+      ],
+    },
+    {
+      'name' => 'pressure_gridded',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Pressure grid for 5 mb subsampling',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'hPa',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '1100',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'lapserate_theta_ss',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Potential temperature lapse rate subsampled at 5  mb resolution',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'K/m',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '-0.5',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '0.5',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'lapserate_theta_smoothed',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Potential temperature lapse rate subsampled at 5  mb resolution and then smoothed over 15 mb via 3 point moving average',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'K/m',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '-0.5',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '0.5',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'atm_pres_ss',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Sonde-measured pressure closest to the bottom of the 5 mb subsampling interval',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'hPa',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '1100',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'theta_ss',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'standard_name',
+          'type'  => 'char',
+          'value' => 'air_potential_temperature',
+        },
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Potential temperature subsampled at 5 mb resolution',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'K',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '100',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '1000',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'wspd_ss',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Wind speed subsampled at 5 mb resolution',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm/s',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '100',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'richardson_number',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Bulk Richardson number',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'unitless',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '0',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '40000',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'virtual_theta_ss',
+      'type' => 'float',
+      'dims' => 'height_ss',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Virtual potential temperature',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'K',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '100',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '1000',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'bottom_inversion',
+      'type' => 'float',
+      'dims' => 'layer',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Height above mean sea level at bottom of inversion layer from Heffter (1980) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'top_inversion',
+      'type' => 'float',
+      'dims' => 'layer',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Height above mean sea level at top of inversion layer from Heffter (1980) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'lapserate_max',
+      'type' => 'float',
+      'dims' => 'layer',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Maximum lapse rate in inversion layer from Heffter (1980) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'K/m',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'delta_theta_max',
+      'type' => 'float',
+      'dims' => 'layer',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'The maximum difference in potential temperature across inversion layers from Heffter (1980) method.',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'K',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+      ],
+    },
+    {
+      'name' => 'level_1_liu_liang',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Level 1 height above mean sea level calculated by the Liu and Liang (2010) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'comment',
+          'type'  => 'char',
+          'value' => 'If pbl_regime_type_liu_liang is 0 or 2, this height is the bottom of unstable layer.  If pbl_regime_type_liu_liang is 1, this is the lowest height of the minimum potential temperature gradient.',
+        },
+        {
+          'name'  => 'ancillary_variables',
+          'type'  => 'char',
+          'value' => 'pbl_regime_type_liu_liang',
+        },
+      ],
+    },
+    {
+      'name' => 'level_2_liu_liang',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Level 2 height above mean sea level calculated by the Liu and Liang (2010) method',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+        {
+          'name'  => 'missing_value',
+          'type'  => 'float',
+          'value' => '-9999',
+        },
+        {
+          'name'  => 'comment',
+          'type'  => 'char',
+          'value' => 'If pbl_regime_type_liu_liang is 0 or 2, this is the height that the lapse rate exceeds the gradient threshold.  If pbl_regime_type_liu_liang is 1, this is the height of the nose of the low-level jet.',
+        },
+        {
+          'name'  => 'ancillary_variables',
+          'type'  => 'char',
+          'value' => 'pbl_regime_type_liu_liang',
+        },
+      ],
+    },
+    {
+      'name' => 'lat',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'North latitude',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'degree_N',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '-90',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '90',
+        },
+      ],
+    },
+    {
+      'name' => 'lon',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'East longitude',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'degree_E',
+        },
+        {
+          'name'  => 'valid_min',
+          'type'  => 'float',
+          'value' => '-180',
+        },
+        {
+          'name'  => 'valid_max',
+          'type'  => 'float',
+          'value' => '180',
+        },
+      ],
+    },
+    {
+      'name' => 'alt',
+      'type' => 'float',
+      'dims' => '',
+      'atts' => [
+        {
+          'name'  => 'long_name',
+          'type'  => 'char',
+          'value' => 'Altitude above mean sea level',
+        },
+        {
+          'name'  => 'units',
+          'type'  => 'char',
+          'value' => 'm',
+        },
+      ],
+    },
+  ],
+);
+
