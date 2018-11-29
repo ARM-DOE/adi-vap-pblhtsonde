@@ -1,4 +1,4 @@
-PRO READ_CONFIG, conf_path, vapname, site, facility
+PRO READ_CONFIG, conf_path, vapname, site, facility, ds
 COMMON THRESHOLDS, inv_strength_thres, instab_threshold, overshoot_threshold
 COMMON GLOBAL_VARS, MISSING, MAX_PBL_HT
   conf_file = conf_path  + path_sep() + site + path_sep() + site + vapname + facility
@@ -6,11 +6,11 @@ COMMON GLOBAL_VARS, MISSING, MAX_PBL_HT
   filename = conf_file+ path_sep() + site + vapname + facility + '.conf'
 
   files = file_search(filename, count=count)
-  if(count lt 1) then abort, 'No Config file found in this path  ' + filename
+  if(count lt 1) then ds.abort, 'No Config file found in this path  ' + filename
 
 
   nlines = file_lines(filename)
-  if nlines eq 0  then abort, 'Could not find the file with info.'
+  if nlines eq 0  then ds.abort, 'Could not find the file with info.'
   buff=strarr(nlines)
   openr,unit,filename,/get_lun
   readf,unit,buff
@@ -28,5 +28,5 @@ COMMON GLOBAL_VARS, MISSING, MAX_PBL_HT
   ;print, overshoot_threshold
 
   if (inv_strength_thres eq MISSING) or ( instab_threshold eq MISSING) or $
-     (overshoot_threshold eq MISSING) then abort, 'Could not find calib info.'
+     (overshoot_threshold eq MISSING) then ds.abort, 'Could not find calib info.'
 END
