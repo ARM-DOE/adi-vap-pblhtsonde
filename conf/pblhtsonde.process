@@ -1,0 +1,387 @@
+{
+  'ret' => {
+    'fields' => [
+      {
+        'out' => [],
+        'qc' => 0,
+        'window' => [
+          0,
+          0
+        ],
+        'min' => undef,
+        'reqd' => 1,
+        'max' => undef,
+        'name' => 'alt',
+        'vars' => [
+          [
+            'alt'
+          ],
+          [
+            'alt'
+          ]
+        ],
+        'dims' => [
+          'time'
+        ],
+        'dtype' => 'float',
+        'qcreqd' => 0,
+        'group' => 'select_1',
+        'delta' => undef,
+        'shape' => undef,
+        'units' => ''
+      },
+      {
+        'out' => [],
+        'qc' => 1,
+        'window' => [
+          0,
+          0
+        ],
+        'min' => undef,
+        'reqd' => 1,
+        'max' => undef,
+        'name' => 'deg',
+        'vars' => [
+          [
+            'deg'
+          ],
+          [
+            'deg'
+          ]
+        ],
+        'dims' => [
+          'time'
+        ],
+        'dtype' => 'float',
+        'qcreqd' => 0,
+        'group' => 'select_1',
+        'delta' => undef,
+        'shape' => undef,
+        'units' => ''
+      },
+      {
+        'out' => [],
+        'qc' => 1,
+        'window' => [
+          0,
+          0
+        ],
+        'min' => undef,
+        'reqd' => 1,
+        'max' => undef,
+        'name' => 'dp',
+        'vars' => [
+          [
+            'dp'
+          ],
+          [
+            'dp'
+          ]
+        ],
+        'dims' => [
+          'time'
+        ],
+        'dtype' => 'float',
+        'qcreqd' => 0,
+        'group' => 'select_1',
+        'delta' => undef,
+        'shape' => undef,
+        'units' => ''
+      },
+      {
+        'out' => [
+          {
+            'd' => 'pblhtsonde1mcfarl.c1',
+            'f' => 'atm_pres'
+          }
+        ],
+        'qc' => 1,
+        'window' => [
+          0,
+          0
+        ],
+        'min' => undef,
+        'reqd' => 1,
+        'max' => undef,
+        'name' => 'pres',
+        'vars' => [
+          [
+            'pres'
+          ],
+          [
+            'pres'
+          ]
+        ],
+        'dims' => [
+          'time'
+        ],
+        'dtype' => 'float',
+        'qcreqd' => 0,
+        'group' => 'select_1',
+        'delta' => undef,
+        'shape' => undef,
+        'units' => ''
+      },
+      {
+        'out' => [
+          {
+            'd' => 'pblhtsonde1mcfarl.c1',
+            'f' => 'rh'
+          }
+        ],
+        'qc' => 1,
+        'window' => [
+          0,
+          0
+        ],
+        'min' => undef,
+        'reqd' => 1,
+        'max' => undef,
+        'name' => 'rh',
+        'vars' => [
+          [
+            'rh'
+          ],
+          [
+            'rh'
+          ]
+        ],
+        'dims' => [
+          'time'
+        ],
+        'dtype' => 'float',
+        'qcreqd' => 0,
+        'group' => 'select_1',
+        'delta' => undef,
+        'shape' => undef,
+        'units' => ''
+      },
+      {
+        'out' => [
+          {
+            'd' => 'pblhtsonde1mcfarl.c1',
+            'f' => 'air_temp'
+          }
+        ],
+        'qc' => 1,
+        'window' => [
+          0,
+          0
+        ],
+        'min' => undef,
+        'reqd' => 1,
+        'max' => undef,
+        'name' => 'tdry',
+        'vars' => [
+          [
+            'tdry'
+          ],
+          [
+            'tdry'
+          ]
+        ],
+        'dims' => [
+          'time'
+        ],
+        'dtype' => 'float',
+        'qcreqd' => 0,
+        'group' => 'select_1',
+        'delta' => undef,
+        'shape' => undef,
+        'units' => ''
+      },
+      {
+        'out' => [
+          {
+            'd' => 'pblhtsonde1mcfarl.c1',
+            'f' => 'wspd'
+          }
+        ],
+        'qc' => 1,
+        'window' => [
+          0,
+          0
+        ],
+        'min' => undef,
+        'reqd' => 1,
+        'max' => undef,
+        'name' => 'wspd',
+        'vars' => [
+          [
+            'wspd'
+          ],
+          [
+            'wspd'
+          ]
+        ],
+        'dims' => [
+          'time'
+        ],
+        'dtype' => 'float',
+        'qcreqd' => 0,
+        'group' => 'select_1',
+        'delta' => undef,
+        'shape' => undef,
+        'units' => ''
+      }
+    ],
+    'desc' => '',
+    'shapes' => {},
+    'groups' => {
+      'select_1' => [
+        'select_1'
+      ]
+    },
+    'name' => 'pblhtsonde',
+    'queries' => {
+      'select_1' => [
+        {
+          'tdep1' => undef,
+          'tdep0' => undef,
+          'level' => 'b1',
+          'site' => undef,
+          'order' => 1,
+          'fac' => undef,
+          'class' => 'sondewnpn',
+          'sdep' => undef,
+          'fdep' => undef
+        },
+        {
+          'tdep1' => undef,
+          'tdep0' => undef,
+          'level' => 'a1',
+          'site' => undef,
+          'order' => 2,
+          'fac' => undef,
+          'class' => 'sondewnpn',
+          'sdep' => undef,
+          'fdep' => undef
+        }
+      ]
+    }
+  },
+  'locations' => [
+    {
+      'site' => 'awr',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'awr',
+      'fac' => 'S1'
+    },
+    {
+      'site' => 'ena',
+      'fac' => 'C1'
+    },
+    {
+      'site' => 'fkb',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'gan',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'grw',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'hfe',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'mar',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'nim',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'nsa',
+      'fac' => 'C1'
+    },
+    {
+      'site' => 'oli',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'pgh',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'pye',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'B1'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'B4'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'B5'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'B6'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'C1'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'S01'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'S02'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'S03'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'S04'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'S05'
+    },
+    {
+      'site' => 'sgp',
+      'fac' => 'S06'
+    },
+    {
+      'site' => 'twp',
+      'fac' => 'C1'
+    },
+    {
+      'site' => 'twp',
+      'fac' => 'C2'
+    },
+    {
+      'site' => 'twp',
+      'fac' => 'C3'
+    }
+  ],
+  'outputs' => [
+    'pblhtsonde1mcfarl.c1'
+  ],
+  'name' => 'pblhtsonde',
+  'cdesc' => 'SONDE Planetary Boundry Layer Height VAP.',
+  'props' => {
+    'processing_interval' => '86400',
+    'warning_mail' => 'chitra.sivaraman@pnnl.gov',
+    'error_mail' => 'chitra.sivaraman@pnnl.gov'
+  },
+  'desc' => '',
+  'type' => 'VAP',
+  'class' => 'pblhtsonde',
+  'category' => 'VAP'
+}
