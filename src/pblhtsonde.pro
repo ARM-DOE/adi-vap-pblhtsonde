@@ -25,7 +25,7 @@
 ; *  Main entry function.
 ; *
 ;- 
-pro pblhtsonde_vap, type, _ref_extra=extra
+pro pblhtsonde, type, _ref_extra=extra
     compile_opt idl2, logical_predicate
 
     ds=dsproc()
