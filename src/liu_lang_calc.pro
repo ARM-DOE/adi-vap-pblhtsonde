@@ -6,7 +6,7 @@ COMMON GLOBAL_VARS, MISSING, MAX_PBL_HT
 ll_height_m =  MISSING
 
 if (n_elements(ss_theta) lt 5 ) then $
-  return, all_regime_type = MISSING
+  return, MISSING
 
   htdni=1
   htupi=4
