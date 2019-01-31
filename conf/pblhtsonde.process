@@ -120,7 +120,7 @@
         'group' => 'select_1',
         'delta' => undef,
         'shape' => undef,
-        'units' => ''
+        'units' => undef
       },
       {
         'out' => [
@@ -262,72 +262,12 @@
   },
   'locations' => [
     {
-      'site' => 'awr',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'awr',
-      'fac' => 'S1'
-    },
-    {
-      'site' => 'ena',
-      'fac' => 'C1'
-    },
-    {
-      'site' => 'fkb',
-      'fac' => 'M1'
-    },
-    {
       'site' => 'gan',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'grw',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'hfe',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'mar',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'nim',
       'fac' => 'M1'
     },
     {
       'site' => 'nsa',
       'fac' => 'C1'
-    },
-    {
-      'site' => 'oli',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'pgh',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'pye',
-      'fac' => 'M1'
-    },
-    {
-      'site' => 'sgp',
-      'fac' => 'B1'
-    },
-    {
-      'site' => 'sgp',
-      'fac' => 'B4'
-    },
-    {
-      'site' => 'sgp',
-      'fac' => 'B5'
-    },
-    {
-      'site' => 'sgp',
-      'fac' => 'B6'
     },
     {
       'site' => 'sgp',
@@ -374,13 +314,11 @@
     'pblhtsonde1mcfarl.c1'
   ],
   'name' => 'pblhtsonde',
-  'cdesc' => 'SONDE Planetary Boundry Layer Height VAP.',
+  'cdesc' => '',
   'props' => {
-    'processing_interval' => '86400',
     'warning_mail' => 'chitra.sivaraman@pnnl.gov',
     'error_mail' => 'chitra.sivaraman@pnnl.gov'
   },
-  'desc' => '',
   'type' => 'VAP',
   'class' => 'pblhtsonde',
   'category' => 'VAP'
