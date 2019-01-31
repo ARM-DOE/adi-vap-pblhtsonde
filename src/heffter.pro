@@ -1,4 +1,4 @@
-FUNCTION HEFFTER, lapse_rate_mask_h,  smoothed_lapse_ss_h, heightm_h, theta_ss_h, opblh_alt
+FUNCTION HEFFTER, lapse_rate_mask_h,  smoothed_lapse_ss_h, heightm_h, theta_ss_h, opblh_alt, ds
   COMMON SUBSAMP, SUBSAMPLE_INTERVAL_MB, gPRES_GRID, gLAPSE_RATE, gSMOOTHED_LAPSE_RATE, gHEIGHT, $ 
                   gTHETA, gPRES, gLAPSE_MASK, gWSPD, gWDIR, gRH, gTDRY, SUBSAMPLED_HEIGHTS
                   

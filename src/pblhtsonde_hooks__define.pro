@@ -492,7 +492,7 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
      
         
         ;Calculate heffter PBL
-        oheffter_var = heffter(lapse_rate_mask,smoothed_lapse_ss,heightm_ss,theta_ss, opblh_alt)
+        oheffter_var = heffter(lapse_rate_mask,smoothed_lapse_ss,heightm_ss,theta_ss, opblh_alt, ds)
         subsampled_profile[gLAPSE_MASK,*] = lapse_rate_mask
         
         nht = SUBSAMPLED_HEIGHTS
