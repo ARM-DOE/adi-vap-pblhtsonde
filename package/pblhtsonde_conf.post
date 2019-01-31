@@ -1,10 +1,12 @@
-#!/bin/csh
+#!/bin/sh
 #
-# Post install script for the pblhtsonde VAP process.
+# Post install script for the vap-pblhtsonde_conf package.
 #
-/bin/csh -c "/apps/ds/bin/db_import_process /apps/process/conf/vap/pblhtsonde/pblhtsonde.process"
-/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-0.0.dod"
-/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-0.1.dod"
-/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-1.0.dod"
-/bin/csh -c "/apps/ds/bin/db_load_dod -q    /apps/process/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-2.0.dod"
+if [ -z "$HOME" ]; then export HOME="/home/cm"; fi
+if [ -z "$DSDB_HOME" ]; then export DSDB_HOME="/apps/ds"; fi
+if [ -z "$PERLLIB" ]; then export PERLLIB="$DSDB_HOME/lib"; fi
+if [ -z "$VAP_HOME" ]; then export VAP_HOME="/apps/process"; fi
+
+$DSDB_HOME/bin/db_import_process $VAP_HOME/conf/vap/pblhtsonde/pblhtsonde.process
+$DSDB_HOME/bin/db_load_dod -q    $VAP_HOME/conf/vap/pblhtsonde/pblhtsonde1mcfarl.c1-2.0.dod
 
