@@ -1,4 +1,4 @@
-FUNCTION detect_bad_sonde, itdry_var, alt_var, ipres_var, to_var, oqc
+FUNCTION detect_bad_sonde, itdry_var, alt_var, ipres_var, to_var, oqc, ds
 bad_sonde =0
 qc = qc_bits_pbl()
  oqc       = make_array(1, /INTEGER, VALUE = 0)

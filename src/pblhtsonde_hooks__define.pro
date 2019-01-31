@@ -366,7 +366,7 @@ function pblhtsonde_hooks::post_retrieval_hook, ds, interval, ret_data
         
         ; Test for bad sonde is 20040420
         ; testing on the input values.
-        bad_sonde = detect_bad_sonde(itdry_var, ialt_var, ipres_var,to_var, oqc)
+        bad_sonde = detect_bad_sonde(itdry_var, ialt_var, ipres_var, to_var, oqc, ds)
         
         if (bad_sonde) then begin
             ;Perhaps we should not write this out at all.
