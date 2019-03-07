@@ -18,10 +18,10 @@ include-items:
    - (package/apps/process)/conf
 
 author:
-  name:         Colby Ham
+  name:         Chitra Sivaraman
   organization: 'PNNL'
-  email:        colby.ham@pnnl.gov
-  phone:        '(509)554-4076'
+  email:        cm@arm.gov
+  phone:        '(509)375-2436'
 
 service-now:
 #  - ENG
