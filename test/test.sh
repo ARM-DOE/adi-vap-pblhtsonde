@@ -2,7 +2,10 @@
 
 # Check if the test is being run by APR
 if [ "$APR_TOPDIR" ]; then
-    export VAP_BIN="$APR_TOPDIR/package/$APR_PREFIX/bin"
+    export PATH="$APR_TOPDIR/package/$APR_PREFIX/bin:$PATH"
+    rm -rf "$APR_TOPDIR/package/$APR_PREFIX/conf"
+    ln -s "$VAP_HOME/conf" "$APR_TOPDIR/package/$APR_PREFIX/conf"
+    export VAP_HOME="$APR_TOPDIR/package/$APR_PREFIX"
     cd $APR_TOPDIR/test
 fi
 
