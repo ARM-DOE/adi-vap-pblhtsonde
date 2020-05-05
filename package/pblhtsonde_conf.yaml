@@ -9,7 +9,6 @@ comp:           vap
 package-name:   pblhtsonde_conf
 default-prefix: /apps/process
 architecture:   noarch
-build-target:   noos
 
 build-script:   package/apr_build.sh --conf
 package-script-dir: package
