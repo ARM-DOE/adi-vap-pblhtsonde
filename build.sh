@@ -265,7 +265,7 @@ join_by()
 
 # Build the build command
 
-idl_buffer="buffer=['BUF_PNNL_RTD_LIC_99781','${IDL_DIR}/license/license-BUF_PNNL_RTD_LIC_99781.bin']"
+idl_buffer="buffer=['BUF_PNNL_RTD_LIC_99781','${IDL_DIR}/../license/license-BUF_PNNL_RTD_LIC_99781.bin']"
 if (( $idl_version < 86 )); then
     idl_buffer="/embedded"
 fi
