@@ -225,6 +225,7 @@
         'units' => ''
       }
     ],
+    'transforms' => {},
     'desc' => '',
     'shapes' => {},
     'groups' => {
@@ -262,6 +263,10 @@
   },
   'locations' => [
     {
+      'site' => 'anx',
+      'fac' => 'X11'
+    },
+    {
       'site' => 'awr',
       'fac' => 'M1'
     },
@@ -286,8 +291,20 @@
       'fac' => 'M1'
     },
     {
+      'site' => 'guc',
+      'fac' => 'M1'
+    },
+    {
       'site' => 'hfe',
       'fac' => 'M1'
+    },
+    {
+      'site' => 'hou',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'hou',
+      'fac' => 'S1'
     },
     {
       'site' => 'mar',
@@ -376,8 +393,10 @@
   'name' => 'pblhtsonde',
   'cdesc' => 'SONDE Planetary Boundry Layer Height VAP.',
   'props' => {
+    'ui_state' => '{"data_locations":{"user_folder":null,"use_user":false,"use_archive":true,"use_test":false}}',
     'processing_interval' => '86400',
     'warning_mail' => 'chitra.sivaraman@pnnl.gov',
+    'output_interval' => '',
     'error_mail' => 'chitra.sivaraman@pnnl.gov'
   },
   'desc' => '',
