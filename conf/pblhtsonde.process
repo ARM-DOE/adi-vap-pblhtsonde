@@ -275,6 +275,10 @@
       'fac' => 'S1'
     },
     {
+      'site' => 'cor',
+      'fac' => 'M1'
+    },
+    {
       'site' => 'ena',
       'fac' => 'C1'
     },
@@ -327,7 +331,15 @@
       'fac' => 'M1'
     },
     {
+      'site' => 'pvc',
+      'fac' => 'M1'
+    },
+    {
       'site' => 'pye',
+      'fac' => 'M1'
+    },
+    {
+      'site' => 'sbs',
       'fac' => 'M1'
     },
     {
@@ -375,6 +387,10 @@
       'fac' => 'S06'
     },
     {
+      'site' => 'tmp',
+      'fac' => 'M1'
+    },
+    {
       'site' => 'twp',
       'fac' => 'C1'
     },
@@ -393,7 +409,7 @@
   'name' => 'pblhtsonde',
   'cdesc' => 'SONDE Planetary Boundry Layer Height VAP.',
   'props' => {
-    'ui_state' => '{"data_locations":{"user_folder":null,"use_user":false,"use_archive":true,"use_test":false}}',
+    'ui_state' => '{"data_locations":{"user_folder":null,"use_user":false,"use_archive":true,"use_test":false},"code_url":"https:\\/\\/code.arm.gov\\/vap\\/pblhtsonde"}',
     'processing_interval' => '86400',
     'warning_mail' => 'chitra.sivaraman@pnnl.gov',
     'output_interval' => '',
