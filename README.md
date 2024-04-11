@@ -1,7 +1,12 @@
 # adi-vap-pblhtsonde
+
+[![Static Badge](https://img.shields.io/badge/DOI-10.11578/dc.20240322.9-blue)](https://doi.org/10.11578/dc.20240301.4)
+
+[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+
 The PBLHT Sonde Value-Added Product (VAP) written on top of the ADI framework.  The technical report is available https://www.arm.gov/publications/tech_reports/doe-sc-arm-tr-132.pdf
 
-If you use the code, please cite the DOI: https://doi.org/10.11578/dc.20240301.4 
+If you use the code, please cite the DOI: https://doi.org/10.11578/dc.20240301.4
 
 Disclaimer
 
